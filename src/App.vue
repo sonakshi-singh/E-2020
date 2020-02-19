@@ -8,8 +8,9 @@
       <!-- <button type="submit"  >Submit</button> -->
     <div v-if="travel=='Tokyo'"> 
       <h2>Travelling to Tokyo ...Here is what you need to know</h2>
+      <SafetyRating v-bind:ratings="ratings" />
       <KeyPhrases v-bind:phrases="phrases" />
-      <HelloWorld v-bind:vaccination="vaccination"/>
+      <HelloWorld v-bind:vaccination="vaccination" />
       <DrugSearch v-bind:drugs="drugs" />
     </div>
   </div>
@@ -19,6 +20,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 import DrugSearch from './components/DrugSearch.vue'
 import KeyPhrases from './components/KeyPhrases.vue'
+import SafetyRating from './components/SafetyRating.vue'
 
 export default {
   name: 'App',
@@ -81,13 +83,21 @@ export default {
           eng_phrase:"Thank You",
           trans_phrase:"Domo Arigato"}
       ],
+      ratings: [
+        {
+          id:1,
+          country: "Japanese",
+          message: "Level 1: Japan is safe to travel"
+        }
+      ],
       travel:""
     }   
   },
   components: {
     HelloWorld,
     DrugSearch,
-    KeyPhrases
+    KeyPhrases,
+    SafetyRating
   }
 }
 </script>
