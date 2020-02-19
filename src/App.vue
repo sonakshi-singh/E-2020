@@ -7,11 +7,21 @@
      <input type="text" v-model="travel" align="center" placeholder="Enter City Name Here">   
       <!-- <button type="submit"  >Submit</button> -->
     <div v-if="travel=='Tokyo'"> 
-      <h2>Travelling to Tokyo ...Here is what you need to know</h2>
-      <SafetyRating v-bind:ratings="ratings" />
-      <KeyPhrases v-bind:phrases="phrases" />
-      <HelloWorld v-bind:vaccination="vaccination" />
-      <DrugSearch v-bind:drugs="drugs" />
+      <h2><br>Travelling to Tokyo ...Here is what you need to know<br><br></h2>
+      <b-card-group deck style = "opacity:.8">
+      <b-card class="text-center">
+        <SafetyRating v-bind:ratings="ratings" />
+      </b-card>
+      <b-card class="text-center">
+        <KeyPhrases v-bind:phrases="phrases" />
+      </b-card>
+      <b-card class="text-center">
+        <HelloWorld v-bind:vaccination="vaccination" />
+      </b-card>
+      <b-card class="text-center">
+        <DrugSearch v-bind:drugs="drugs" />
+      </b-card>
+      </b-card-group>
     </div>
   </div>
 </template>
