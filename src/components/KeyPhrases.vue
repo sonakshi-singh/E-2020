@@ -1,9 +1,9 @@
 <template>
   <div class="phraseBox">
-    <h3 align="left">Key Phrases in Japanese</h3>
+    <h3 align="left"><b>Key Phrases in Japanese</b></h3>
     <div v-bind:key="phrase.id" v-for="phrase in phrases">
       <p align="left">
-      {{phrase.eng_phrase}} -> {{phrase.trans_phrase}}
+      <b>{{phrase.eng_phrase}} -> {{phrase.trans_phrase}}</b>
       </p>
     </div>
   </div>

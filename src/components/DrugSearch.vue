@@ -1,11 +1,12 @@
 <template>
   <div class="drugs">
-    <h2 align="left">Please enter below the drug whose information you seek</h2>
+    <h2 align="left"><b>Please enter below the drug whose information you seek</b></h2>
      <div>
       <p align="left">
+      <b>
       <input type="text" v-model="input1" align="left" placeholder="Enter Drug Name Here">   
       <!-- <button type="submit"  >Submit</button> -->
-      
+      </b>
       </p>
          <div v-if="input1!=''"> 
          <div v-bind:key="drug.id" v-for="drug in drugs">
@@ -30,7 +31,7 @@
             </div>    
         </div> 
         <div v-else align="left">
-            Please input data to get results....
+            <b>Please input data to get results....</b>
             </div>
 
     </div>

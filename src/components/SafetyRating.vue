@@ -1,9 +1,9 @@
 <template>
   <div class="ratingBox">
-    <h3 align="left">Japan Safety Rating</h3>
+    <h3 align="left"><b>Japan Safety Rating</b></h3>
     <div v-bind:key="rating.id" v-for="rating in ratings">
       <p align="left">
-      {{rating.message}}
+      <b>{{rating.message}}</b>
       </p>
     </div>
   </div>
