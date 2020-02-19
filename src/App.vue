@@ -2,7 +2,8 @@
   <div id="app">
     <!-- <div style="background-image: url(./src/body.jpg);"> -->
     <!-- <img alt="Vue logo" src="./body.jpg"> -->
-    <h1>Where are you Travelling ???</h1>
+    <h1 style="font-size:60px;">Welcome to MediBuddy</h1>
+    <h1>Where are you Travelling ?</h1>
      <input type="text" v-model="travel" align="center" placeholder="Enter City Name Here">   
       <!-- <button type="submit"  >Submit</button> -->
     <div v-if="travel=='Tokyo'"> 
@@ -78,7 +79,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color:black;
   margin-top: 60px;
 }
 

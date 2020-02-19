@@ -3,8 +3,10 @@
     <h2 align="left">Vaccinations recommended for travel</h2>
     <div v-bind:key="vac.id" v-for="vac in vaccination">
       <p align="left">
+       <b> 
       <input type="checkbox" align="left">
         {{vac.vacc}}
+      </b>
       </p>
     </div>
   
