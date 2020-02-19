@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h3 align="left">Vaccinations recommended for travel</h3>
+    <h2 align="left">Vaccinations recommended for travel</h2>
     <div v-bind:key="vac.id" v-for="vac in vaccination">
       <p align="left">
       <input type="checkbox" align="left">

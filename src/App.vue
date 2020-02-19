@@ -1,10 +1,14 @@
 <template >
   <div id="app">
-    <div style="background-image: url(./src/body.jpg);">
+    <!-- <div style="background-image: url(./src/body.jpg);"> -->
     <!-- <img alt="Vue logo" src="./body.jpg"> -->
-    <h1>Travelling to Tokyo ...Here is what you need to know</h1>
-    <HelloWorld v-bind:vaccination="vaccination"/>
-    <DrugSearch v-bind:drugs="drugs" />
+    <h1>Where are you Travelling ???</h1>
+     <input type="text" v-model="travel" align="center" placeholder="Enter City Name Here">   
+      <!-- <button type="submit"  >Submit</button> -->
+    <div v-if="travel=='Tokyo'"> 
+      <h2>Travelling to Tokyo ...Here is what you need to know</h2>
+      <HelloWorld v-bind:vaccination="vaccination"/>
+      <DrugSearch v-bind:drugs="drugs" />
     </div>
   </div>
 </template>
@@ -35,7 +39,7 @@ export default {
       ],
       drugs:[
         { id:1,
-          drug:"Advil",
+          drug:"advil",
           Generic_Name:"ibuprofen",
           Strength:"200 mg",
           Availability:"Rx and/or OTC",
@@ -54,7 +58,8 @@ export default {
           { id:7,
           vacc:"shingles"} 
 
-      ]
+      ],
+      travel:""
     }   
   },
   components: {
@@ -68,6 +73,7 @@ export default {
 #app { 
   /* background-image: url("./body.jpg");
   background-size: length; */
+  /* background-color: darkslategray; */
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
