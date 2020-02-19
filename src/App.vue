@@ -3,6 +3,7 @@
     <div style="background-image: url(./src/body.jpg);">
     <!-- <img alt="Vue logo" src="./body.jpg"> -->
     <h1>Travelling to Tokyo ...Here is what you need to know</h1>
+    <KeyPhrases v-bind:phrases="phrases" />
     <HelloWorld v-bind:vaccination="vaccination"/>
     <DrugSearch v-bind:drugs="drugs" />
     </div>
@@ -12,6 +13,7 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import DrugSearch from './components/DrugSearch.vue'
+import KeyPhrases from './components/KeyPhrases.vue'
 
 export default {
   name: 'App',
@@ -53,13 +55,33 @@ export default {
           vacc:"measels"},
           { id:7,
           vacc:"shingles"} 
-
+      ],
+      phrases: [
+        { id:1,
+          eng_phrase:"Hello",
+          trans_phrase:"Konnichiwa"},
+        { id:2,
+          eng_phrase:"Goodbye",
+          trans_phrase:"Sayonara"},
+        { id:3,
+          eng_phrase:"Yes",
+          trans_phrase:"Hai"},
+        { id:4,
+          eng_phrase:"No",
+          trans_phrase:"Lie"},
+        { id:5,
+          eng_phrase:"Please",
+          trans_phrase:"Onegaishimasu"},
+        { id:6,
+          eng_phrase:"Thank You",
+          trans_phrase:"Domo Arigato"}
       ]
     }   
   },
   components: {
     HelloWorld,
-    DrugSearch
+    DrugSearch,
+    KeyPhrases
   }
 }
 </script>
