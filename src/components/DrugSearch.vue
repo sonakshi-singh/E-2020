@@ -1,14 +1,37 @@
 <template>
   <div class="drugs">
-    <h3 align="left">Please enter below the drug whose information you seek</h3>
+    <h2 align="left">Please enter below the drug whose information you seek</h2>
      <div>
       <p align="left">
       <input type="text" v-model="input1" align="left" placeholder="Enter Drug Name Here">   
-      <button type="submit"  >Submit</button>
+      <!-- <button type="submit"  >Submit</button> -->
+      
       </p>
-      {{input1}}
+         <div v-if="input1!=''"> 
          <div v-bind:key="drug.id" v-for="drug in drugs">
-            </div>     
+            <div v-if="(drug.drug==input1.toLowerCase())">
+                <p align="left" >
+                <b>
+                <br />
+                Drug :  {{drug.drug}}
+                <br />
+                Generic Name : {{drug.Generic_Name}}
+                <br />
+                Strength : {{drug.Strength}},
+                <br />
+                Availability : {{drug.Availability}},
+                <br />
+                Drug_Class : {{drug.Drug_Class}},
+                <br />
+                Alternate Drug Options : {{drug.Alternate}}
+                </b>
+                </p>
+                </div> 
+            </div>    
+        </div> 
+        <div v-else align="left">
+            Please input data to get results....
+            </div>
 
     </div>
   </div>

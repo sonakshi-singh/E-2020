@@ -1,11 +1,16 @@
 <template >
   <div id="app">
-    <div style="background-image: url(./src/body.jpg);">
+    <!-- <div style="background-image: url(./src/body.jpg);"> -->
     <!-- <img alt="Vue logo" src="./body.jpg"> -->
-    <h1>Travelling to Tokyo ...Here is what you need to know</h1>
-    <KeyPhrases v-bind:phrases="phrases" />
-    <HelloWorld v-bind:vaccination="vaccination"/>
-    <DrugSearch v-bind:drugs="drugs" />
+    <h1 style="font-size:60px;">Welcome to MediBuddy</h1>
+    <h1>Where are you Travelling ?</h1>
+     <input type="text" v-model="travel" align="center" placeholder="Enter City Name Here">   
+      <!-- <button type="submit"  >Submit</button> -->
+    <div v-if="travel=='Tokyo'"> 
+      <h2>Travelling to Tokyo ...Here is what you need to know</h2>
+      <KeyPhrases v-bind:phrases="phrases" />
+      <HelloWorld v-bind:vaccination="vaccination"/>
+      <DrugSearch v-bind:drugs="drugs" />
     </div>
   </div>
 </template>
@@ -37,7 +42,7 @@ export default {
       ],
       drugs:[
         { id:1,
-          drug:"Advil",
+          drug:"advil",
           Generic_Name:"ibuprofen",
           Strength:"200 mg",
           Availability:"Rx and/or OTC",
@@ -75,7 +80,8 @@ export default {
         { id:6,
           eng_phrase:"Thank You",
           trans_phrase:"Domo Arigato"}
-      ]
+      ],
+      travel:""
     }   
   },
   components: {
@@ -90,11 +96,12 @@ export default {
 #app { 
   /* background-image: url("./body.jpg");
   background-size: length; */
+  /* background-color: darkslategray; */
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color:black;
   margin-top: 60px;
 }
 
