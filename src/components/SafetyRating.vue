@@ -13,19 +13,19 @@ export default {
     props: ["country"],
     data(){
         return {
-            rating:"huh"
+            rating:"Country not found"
         }
     },
     methods: {
       getRating: function() {
         var Feed = require('rss-to-json');
+        var self = this;
         Feed.load('https://cors-anywhere.herokuapp.com/https://travel.state.gov/_res/rss/TAsTWs.xml', function(err, rss){
            console.log(rss);
            var a = rss.items;
            console.log(a[70].title);
-           return a[70].title
+           self.rating = a[70].title
          });
-         this.rating = "Japan - Level 2: Exercise Increased Caution"
     }
   } 
 }
