@@ -10,7 +10,7 @@
       <h2><br>Travelling to Tokyo ...Here is what you need to know<br><br></h2>
       <b-card-group deck style = "opacity:.8">
       <b-card class="text-center">
-        <SafetyRating v-bind:ratings="ratings" />
+        <SafetyRating :country = "country" />
       </b-card>
       <b-card class="text-center">
         <KeyPhrases v-bind:phrases="phrases" />
@@ -31,6 +31,7 @@ import HelloWorld from './components/HelloWorld.vue'
 import DrugSearch from './components/DrugSearch.vue'
 import KeyPhrases from './components/KeyPhrases.vue'
 import SafetyRating from './components/SafetyRating.vue'
+
 
 export default {
   name: 'App',
@@ -93,13 +94,7 @@ export default {
           eng_phrase:"Thank You",
           trans_phrase:"Domo Arigato"}
       ],
-      ratings: [
-        {
-          id:1,
-          country: "Japanese",
-          message: "Level 1: Japan is safe to travel"
-        }
-      ],
+      country: "Japan",
       travel:""
     }   
   },
