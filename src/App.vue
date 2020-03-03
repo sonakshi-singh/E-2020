@@ -8,15 +8,36 @@
       <!-- <button type="submit"  >Submit</button> -->
     <div v-if="travel=='Tokyo'"> 
       <h2><br>Travelling to Tokyo ...Here is what you need to know<br><br></h2>
-      <b-card-group deck style = "opacity:.8">
+      <b-card-group columns style = "opacity:.8" id="card">
       <b-card class="text-center">
         <SafetyRating :country = "country" />
       </b-card>
-      <b-card class="text-center">
+       <b-card class="text-center">
         <KeyPhrases v-bind:phrases="phrases" />
       </b-card>
-      <b-card class="text-center">
-        <HelloWorld v-bind:vaccination="vaccination" />
+      <b-card title = "Emergency Numbers" id="card">
+        <h3>Emergency Numbers</h3>
+      </b-card>
+      <b-card title = "Tap Water">
+        <h3>Tap Water</h3>
+      </b-card>
+      <b-card title = "Languages" >
+        <h3>Languages</h3>
+      </b-card>
+      <b-card title = "Emergency Numbers" >
+        <h3>Emergency Numbers</h3>
+      </b-card>
+      <b-card title = "Outlets" >
+        <h3>Outlets</h3>
+      </b-card>
+      <b-card >
+        <Vaccinations v-bind:vaccination="vaccination" />
+      </b-card>
+      <b-card title ="Packing List" >
+        <h3>Toothbrush</h3>
+      </b-card>
+      <b-card title ="Local Healthcare Expert Tips" class="text-center">
+        <h3>Try some sushi!</h3>
       </b-card>
       <b-card class="text-center">
         <DrugSearch v-bind:drugs="drugs" />
@@ -27,7 +48,7 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Vaccinations from './components/Vaccinations.vue'
 import DrugSearch from './components/DrugSearch.vue'
 import KeyPhrases from './components/KeyPhrases.vue'
 import SafetyRating from './components/SafetyRating.vue'
@@ -94,12 +115,12 @@ export default {
           eng_phrase:"Thank You",
           trans_phrase:"Domo Arigato"}
       ],
-      country: "Japan",
+      country: "Hong Kong",
       travel:""
     }   
   },
   components: {
-    HelloWorld,
+    Vaccinations,
     DrugSearch,
     KeyPhrases,
     SafetyRating
@@ -118,6 +139,10 @@ export default {
   text-align: center;
   color:black;
   margin-top: 60px;
+}
+#card {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  width:100%
 }
 
 </style>

@@ -4,6 +4,7 @@
     <p align="left">
       <b>{{getCountryID()}}{{rating}}</b>
       <br/>{{message}}
+       <button v-on:click="changeMessage()">See More</button>
     </p>
   </div>
 </template>
@@ -17,7 +18,8 @@ export default {
             rating:"Loading...",
             countryID:-1,
             allRatings:[],
-            message: ""
+            message: "",
+            altMessage: ""
         }
     },
     methods: {
@@ -42,6 +44,8 @@ export default {
              this.rating = this.allRatings[this.countryID].title;
              console.log(this.allRatings[this.countryID]);
              this.message = this.stripHtml(this.allRatings[this.countryID].description);
+             this.shortenMessage();
+             this.changeMessage();
              }
       },
       stripHtml : function (html){
@@ -51,6 +55,14 @@ export default {
         temporalDivElement.innerHTML = html;
         // Retrieve the text property of the element (cross-browser support)
         return temporalDivElement.textContent || temporalDivElement.innerText || "";
+      },
+      shortenMessage : function(){
+        this.altMessage = this.message.substring(0,80)+"... ";
+      },
+      changeMessage : function(){
+        var msg = this.altMessage;
+        this.altMessage = this.message;
+        this.message = msg;
       }
     },
     mounted: function() {
