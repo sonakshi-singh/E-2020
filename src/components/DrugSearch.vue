@@ -1,6 +1,6 @@
 <template>
   <div class="drugs">
-    <h2 align="left"><b>Please enter below the drug whose information you seek</b></h2>
+    <h1 align="left"><b>Please enter below the drug whose information you seek</b></h1>
      <div>
       <p align="left">
       <b>

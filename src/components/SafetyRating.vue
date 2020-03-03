@@ -1,6 +1,6 @@
 <template>
   <div class="ratingBox">
-    <h3 align="left"><b>Safety Rating</b></h3>
+    <h1 align="left"><b>Safety Rating</b></h1>
     <p align="left">
       <b>{{getCountryID()}}{{rating}}</b>
       <br/>{{message}}

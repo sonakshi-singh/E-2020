@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h2 align="left"><b>Vaccinations recommended for travel</b></h2>
+    <h1 align="left"><b>Vaccinations recommended for travel</b></h1>
     <div v-bind:key="vac.id" v-for="vac in vaccination">
       <p align="left">
        <b> 
