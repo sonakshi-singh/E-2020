@@ -44,8 +44,15 @@ export default {
   props: ["drugs"],
   data(){
       return{
-         input1:""   
+        input1: "",
+         destination:"" 
       }
+  },
+  created() {
+    this.$root.$on('destWasEntered', travel => {
+      this.destination = travel;
+      console.log("dest", this.destination);
+    })
   }
 }
 </script>
