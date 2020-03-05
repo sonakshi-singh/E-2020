@@ -76,6 +76,7 @@
         </b-row>
       </div>
     </div>
+    <safety-rating></safety-rating>
     <Footer></Footer>
   </b-container>
 </template>
@@ -118,7 +119,7 @@ export default {
   },
   components: {
     Vaccinations,
-    SafetyRating,
+    SafetyRating,  
     Banner,
     Footer
   }
@@ -166,7 +167,7 @@ export default {
 
   hr {
   border-color: lightgray transparent #474747 transparent;
-  border-size: 1px;
+  
   border-style: solid;
   height: 0;
   }
