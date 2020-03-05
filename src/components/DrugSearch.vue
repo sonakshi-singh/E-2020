@@ -1,6 +1,6 @@
 <template>
   <div class="drugs">
-    <h2 align="left"><b>Please enter below the drug whose information you seek</b></h2>
+    <h1 align="left"><b>Please enter below the drug whose information you seek</b></h1>
      <div>
       <p align="left">
       <b>
@@ -44,14 +44,23 @@ export default {
   props: ["drugs"],
   data(){
       return{
-         input1:""   
+        input1: "",
+         destination:"" 
       }
+  },
+  created() {
+    this.$root.$on('destWasEntered', travel => {
+      this.destination = travel;
+      console.log("dest", this.destination);
+    })
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
+
+$base-color: #42b983;
 
 .is-Complete{
   text-decoration:line-through;
