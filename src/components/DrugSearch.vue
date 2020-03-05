@@ -1,19 +1,14 @@
 <template>
 
-  <div class="drugs">
+  <b-container fluid class="drugs-container">
+   <Banner></Banner>
 
 
-    <div>
+
   <!-- Image and text -->
-  <b-navbar variant="faded" type="light">
-    <b-navbar-brand href="#">
-     
-     
-    </b-navbar-brand>
-  </b-navbar>
-</div>
+  
 
-
+<div>
 <p align="left"> SEARCH BY </p>
 <b-input-group>
   <input type="text" v-model="input1" align="left" placeholder="Search by US medication name"/> 
@@ -96,10 +91,10 @@
 
 
           
-    <Footer></Footer>
+    
     -->
-  
-
+     <Footer></Footer>
+  </b-container>
 </template>
 
 <script>
@@ -122,12 +117,13 @@ export default {
       this.destination = travel;
       console.log("dest", this.destination);
     });
+  }
   },
   components: {
     Banner,
     Footer
   }
-  }
+  
 };
  
 </script>
@@ -159,7 +155,6 @@ a {
   color: #42b983;
 }
 */
-$base-color : #E70B28;
 /*
 .logo
 {
@@ -167,15 +162,9 @@ $base-color : #E70B28;
   width: 10%;
  
 }
-.b-navbar
-{
-  height: 10px;
-  display: inline-block;
-  width: 30%;
-  height: 40%;
-  
-}
 */
+
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 p{
 font-family: 'Montserrat';
