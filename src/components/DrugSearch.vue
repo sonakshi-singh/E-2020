@@ -1,76 +1,5 @@
-
 <template>
-
   <div class="drugs">
-
-
-    <div>
-  <!-- Image and text -->
-  <b-navbar variant="faded" type="light">
-    <b-navbar-brand href="#">
-     
-     
-    </b-navbar-brand>
-  </b-navbar>
-</div>
-
-
-<p align="left"> SEARCH BY </p>
-<b-input-group>
-  <input type="text" v-model="input1" align="left" placeholder="Search by US medication name"/> 
-  <b-input-group-append>
- <b-icon-search> </b-icon-search>
- </b-input-group-append>
-</b-input-group>
-<br><br>
-<p align="center"> --- OR ---</p>
-  <div v-if="input1!=''"> 
-         <div v-bind:key="drug.id" v-for="drug in drugs">
-            <div v-if="(drug.drug==input1.toLowerCase())">
-                <p align="left" >
-                <b>
-                <br />
-                Drug :  {{drug.drug}}
-                <br />
-                Generic Name : {{drug.Generic_Name}}
-                <br />
-                Strength : {{drug.Strength}},
-                <br />
-                Availability : {{drug.Availability}},
-                <br />
-                Drug_Class : {{drug.Drug_Class}},
-                <br />
-                Alternate Drug Options : {{drug.Alternate}}
-                </b>
-                </p>
-                </div> 
-            </div>    
-        </div> 
-
-
-<div>
-  
-  <b-dropdown text="CATEGORY" 
-    block
-    variant="white"
-    class="m-2" menu-class="w-100">
- 
-    <b-form-group>
-    <b-dropdown-item href="#"> <b-form-radio v-model="selected" name="some-radios" value="A">COLD</b-form-radio> </b-dropdown-item>
-    <b-dropdown-item href="#"> <b-form-radio v-model="selected" name="some-radios" value="B">FEVER</b-form-radio> </b-dropdown-item>
-    <b-dropdown-item href="#"> <b-form-radio v-model="selected" name="some-radios" value="C">COUGH</b-form-radio> </b-dropdown-item>
-    </b-form-group>
-  </b-dropdown>
-</div>
-
-</div>
-   <!-- <h1 align="left"><b>Please enter below the drug whose information you seek</b></h1>
-     <div>
-      <p align="left">
-      <b>
-      <input type="text" v-model="input1" align="left" placeholder="Enter Drug Name Here">   
-       <button type="submit"  >Submit</button> 
-      </b>
     <Banner />
     <h1 align="left">
       <b>Please enter below the drug whose information you seek</b>
@@ -79,10 +8,16 @@
       <p align="left">
         <b>
           <input type="text" v-model="input1" align="left" placeholder="Enter Drug Name Here" />
+<<<<<<< HEAD
           <button type="submit"  >Submit</button> 
         
 
      
+=======
+          <!-- <button type="submit"  >Submit</button> -->
+        </b>
+      </p>
+>>>>>>> be868cdaf69257d46788bbb79fc7339fb8ad89ca
       <div v-if="input1!=''">
         <div v-bind:key="drug.id" v-for="drug in drugs">
           <div v-if="(drug.drug==input1.toLowerCase())">
@@ -100,6 +35,7 @@
                 Drug_Class : {{drug.Drug_Class}},
                 <br />
                 Alternate Drug Options : {{drug.Alternate}}
+<<<<<<< HEAD
 
                 </b>
                 </p>
@@ -119,6 +55,19 @@
             
   </div> -->
 
+=======
+              </b>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div v-else align="left">
+        <b>Please input data to get results....</b>
+      </div>
+    </div>
+    <Footer></Footer>
+  </div>
+>>>>>>> be868cdaf69257d46788bbb79fc7339fb8ad89ca
 </template>
 
 <script>
@@ -128,6 +77,7 @@ import Footer from "./Footer.vue";
 export default {
   name: "DrugSearch",
   props: ["drugs"],
+<<<<<<< HEAD
 
   data(){
       return{
@@ -136,8 +86,14 @@ export default {
          selected:""
       };
 
+=======
+  data() {
+    return {
+      input1: "",
+      destination: ""
+    };
+>>>>>>> be868cdaf69257d46788bbb79fc7339fb8ad89ca
   },
-  methods:{
   created() {
     this.$root.$on("destWasEntered", travel => {
       this.destination = travel;
@@ -150,6 +106,7 @@ export default {
     Banner,
     Footer
   }
+<<<<<<< HEAD
   
   }
 }; 
@@ -160,11 +117,13 @@ export default {
 
 
 
+=======
+};
+>>>>>>> be868cdaf69257d46788bbb79fc7339fb8ad89ca
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-
 
 * {
   font-family: "Montserrat", sans-serif;
@@ -174,7 +133,6 @@ export default {
  
 }
 $base-color: #42b983;
-
 
 .is-Complete {
   text-decoration: line-through;
@@ -191,9 +149,9 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-
 a {
   color: #42b983;
+<<<<<<< HEAD
 }
 
 $base-color : #E70B28;
@@ -232,13 +190,7 @@ input
   padding: 5px;
   background-color:	#EFEFEF ;
   margin-left: 25%;
+=======
+>>>>>>> be868cdaf69257d46788bbb79fc7339fb8ad89ca
 }
-
-b-dropdown
-{
-  margin-left:10% ;
-  width: 50%;
-  background-color: white;
-}
-
 </style>
