@@ -79,10 +79,10 @@
       <p align="left">
         <b>
           <input type="text" v-model="input1" align="left" placeholder="Enter Drug Name Here" />
-          <!-- <button type="submit"  >Submit</button> -->
-        </b>
+          <button type="submit"  >Submit</button> 
+        
 
-      </p>
+     
       <div v-if="input1!=''">
         <div v-bind:key="drug.id" v-for="drug in drugs">
           <div v-if="(drug.drug==input1.toLowerCase())">
@@ -106,25 +106,18 @@
                 </div> 
             </div>    
         </div> 
-        <div v-else align="left">
+
+
+       <div v-else align="left">
             <b>Please input data to get results....</b>
             </div> 
 
-    </div> -->
+    </div>
   
 
 
-              </b>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div v-else align="left">
-        <b>Please input data to get results....</b>
-      </div>
-    </div>
-    <Footer></Footer>
-  </div>
+            
+  </div> -->
 
 </template>
 
@@ -141,13 +134,7 @@ export default {
         input1: "",
          destination:"" ,
          selected:""
-      }
-
-  data() {
-    return {
-      input1: "",
-      destination: ""
-    };
+      };
 
   },
   methods:{
@@ -157,13 +144,17 @@ export default {
       console.log("dest", this.destination);
     });
   },
-  components: {
+  
+
+    components: {
     Banner,
     Footer
   }
-
+  
   }
-};
+}; 
+  
+
 
  
 
@@ -203,7 +194,7 @@ li {
 
 a {
   color: #42b983;
-}*/ 
+}
 
 $base-color : #E70B28;
 /*
