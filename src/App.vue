@@ -1,8 +1,5 @@
 <template >
   <div id="app">
-    <b-nav class="navbar">
-      <img src="./assets/logo-white.png" />
-    </b-nav>
     <router-view></router-view>
     <!-- <div v-if="travel=='Tokyo'">
       <h2>
@@ -65,11 +62,8 @@
 </template>
 
 <script>
-import Vaccinations from "./components/Vaccinations.vue";
-import DrugSearch from "./components/DrugSearch.vue";
-import KeyPhrases from "./components/KeyPhrases.vue";
-import SafetyRating from "./components/SafetyRating.vue";
-import Home from "./components/Home.vue";
+import Banner from "./components/Banner.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
   name: "App",
@@ -114,36 +108,21 @@ export default {
     };
   },
   components: {
-    // Home,
-    // Vaccinations,
-    // DrugSearch,
-    // KeyPhrases,
-    // SafetyRating
+    Banner,
+    Footer
   }
 };
 </script>
 
 <style >
+
 #app {
-  /* background-image: url("./body.jpg");
-  background-size: length; */
-  /* background-color: darkslategray; */
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: black;
-  height: 100%;
-}
-#card {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  width: 100%;
-}
-.navbar {
-  background-color: red;
+   background-color: #F8F8F8;
 }
 
-.bene-image {
-  background-image: url("./assets/logo-white.png");
-}
 </style>
