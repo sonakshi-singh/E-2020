@@ -1,5 +1,6 @@
 <template>
   <div class="phraseBox">
+    <Banner></Banner>
     <h1 align="left">
       <b>Key Phrases in Japanese</b>
     </h1>
@@ -8,10 +9,14 @@
         <b>{{phrase.eng_phrase}} -> {{phrase.trans_phrase}}</b>
       </p>
     </div>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
+import Banner from "./Banner.vue";
+import Footer from "./Footer.vue";
+
 export default {
   name: "KeyPhrases",
   data() {
@@ -38,6 +43,21 @@ export default {
         console.log("WAIT WHAT", this.destination);
       });
     }
+  },
+  components: {
+    Banner,
+    Footer
   }
 };
 </script>
+
+<style>
+* {
+  font-family: "Montserrat", sans-serif;
+  color: #333;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.3),
+    0px -0px 0px rgba(0, 0, 0, 0.7);
+ 
+}
+
+</style>
