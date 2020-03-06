@@ -1,7 +1,8 @@
 <template>
   <b-container fluid class="factSheet-container">
     <Banner></Banner>
-    <div v-if="destination === 'Tokyo'" class="country-info">
+    <div v-if="destination === 'Tokyo'">
+      <button @click="generate_pdf">Generate PDF </button>
       <b-row>
         <b-col xs="6" sm="6" md="6" lg="6" xl="6">
           <p class="tokyo-heading">{{upperCaseDest}} TRAVEL FACTSHEET</p>
@@ -15,6 +16,7 @@
         <b-row>
           <b-col xs="6" sm="6" md="6" lg="6" xl="6">
             <p class="heading">SAFETY RATING</p>
+            <SafetyRating :country="country" />
           </b-col>
         </b-row>
         <p></p>
@@ -24,7 +26,10 @@
         <b-row>
           <b-col xs="6" sm="6" md="6" lg="6" xl="6">
             <p class="heading">EMERGENCY NUMBERS</p>
-            <p class="content">911</p>
+            <p class="content">110 - Crime and accident</p>
+            <p class="content">119 - Fire and ambulance</p>
+            <p class="heading">CLOSEST EMBASSY</p><br>
+            <Embassies :city="Tokyo"/>
           </b-col>
         </b-row>
       </div>
@@ -33,7 +38,7 @@
         <b-row>
           <b-col xs="6" sm="6" md="6" lg="6" xl="6">
             <p class="heading">WATER SAFETY</p>
-            <p class="content">Safe to drink tap water</p>
+            <p class="content">Tap water is safe for direct consumption</p>
           </b-col>
         </b-row>
       </div>
@@ -42,7 +47,8 @@
         <b-row>
           <b-col xs="6" sm="6" md="6" lg="6" xl="6">
             <p class="heading">LANGUAGES</p>
-            <p class="content">Japanese</p>
+            <p class="content">Japanese is the main language</p>
+            <p class="content">Most Japanese speak limited English unless you are at popular tourist spots</p>
           </b-col>
         </b-row>
       </div>
@@ -52,6 +58,7 @@
           <b-col xs="6" sm="6" md="6" lg="6" xl="6">
             <p class="heading">OUTLETS</p>
             <p class="content">Type A or B</p>
+            <Outlets/>
           </b-col>
         </b-row>
       </div>
@@ -76,7 +83,6 @@
         </b-row>
       </div>
     </div>
-    <safety-rating></safety-rating>
     <Footer></Footer>
   </b-container>
 </template>
@@ -87,6 +93,9 @@ import Vaccinations from "./Vaccinations.vue";
 import SafetyRating from "./SafetyRating.vue";
 import Banner from "./Banner.vue";
 import Footer from "./Footer.vue";
+import Embassies from "./Embassies.vue"
+import Outlets from "./Outlets.vue"
+import jspdf from "jspdf" 
 
 export default {
   name: "FactSheet",
@@ -115,13 +124,21 @@ export default {
         this.destination = travel;
         console.log("WAIT WHAT", this.destination);
       });
+    },
+    generate_pdf(){
+      console.log("reached this spot")
+      const doc=new jspdf()  
+      doc.text("Fact Sheet Bitches",15,15)
+      doc.save("Bene_Travel.pdf")
     }
   },
   components: {
     Vaccinations,
     SafetyRating,  
     Banner,
-    Footer
+    Footer,
+    Embassies,
+    Outlets
   }
 };
 </script>
