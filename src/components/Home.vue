@@ -2,17 +2,23 @@
   <b-container fluid class="home-container">
     <div class="enter-dest">
       <b-row>
-        <b-col sm="12" md="12" lg="12" xl="12">
+        <b-col xs="12" sm="12" md="9" offset-md="2" lg="6" offset-lg="3" xl="6" offset-xl="3">
           <div class="content">
             <h1>WHERE ARE YOU GOING ?</h1>
-            <input type="text" v-model="travel" align="center" placeholder="Enter City Name Here" class="input"/>
+            <b-form-input
+              type="text"
+              v-model="travel"
+              align="center"
+              placeholder="Enter City Name Here"
+              class="input"
+            ></b-form-input>
             <div>{{travel}}</div>
           </div>
         </b-col>
       </b-row>
     </div>
     <div class="buttons">
-      <b-row>
+      <b-row no-gutters> 
         <b-col xs="6" sm="6" md="6" lg="3" xl="3">
           <router-link :to="'drugSearch'">
             <b-button
@@ -70,7 +76,7 @@ $button-color: #e7eff9;
 
   .buttons {
     position: relative;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
     display: inline;
   }
@@ -79,6 +85,7 @@ $button-color: #e7eff9;
     position: relative;
     top: 20%;
     transform: translateY(-50%);
+
     .content {
       margin: 2em 0 0 0;
     }
