@@ -26,11 +26,14 @@ export default {
 </script>
  
 <style lang="scss" scoped>
+$page-color: #333;
+$text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.3),
+    0px -0px 0px rgba(0, 0, 0, 0.7);
+
 * {
   font-family: "Montserrat", sans-serif;
-  color: #333;
-  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.3),
-    0px -0px 0px rgba(0, 0, 0, 0.7);
+  color: $page-color;
+  text-shadow: $text-shadow;
  
 }
 
@@ -39,10 +42,10 @@ export default {
   -webkit-box-shadow: 0px -4px 14px -14px rgba(201, 201, 201, 1);
   -moz-box-shadow: 0px -4px 14px -14px rgba(201, 201, 201, 1);
   box-shadow: 0px -4px 14px -14px rgba(201, 201, 201, 1);
-  overflow: hidden;
-  position: fixed;
   bottom: 0;
-  width: 100%;
+    margin-top: calc(20% + 20px);
+    position: relative;
+    bottom: 0;
 }
 
 .navbar-nav {

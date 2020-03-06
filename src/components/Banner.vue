@@ -25,10 +25,6 @@ export default {
   
 
   img {
-    // position: absolute;
-    // left: 40%;
-    // margin-left: -80px !important; /* 50% of your logo width */
-    // display: block;
     height: 80%;
     width: 70%;
   }
