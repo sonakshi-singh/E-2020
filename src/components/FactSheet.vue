@@ -127,11 +127,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 @mixin font-weight($font-weight) {
   font-weight: $font-weight;
   text-align: left;
 }
-
 * {
   font-family: "Montserrat", sans-serif;
   color: #333;
@@ -141,7 +141,6 @@ export default {
 }
 
 .factSheet-container {
-
   .download-heading {
     color: lighten(#333, 20%);
     text-align: left;
@@ -177,5 +176,4 @@ export default {
   }
 }
 </style>
-
 
