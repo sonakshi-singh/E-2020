@@ -62,8 +62,8 @@
 </template>
 
 <script>
-//import Banner from "./components/Banner.vue";
-//import Footer from "./components/Footer.vue";
+import Banner from "./components/Banner.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
   name: "App",
@@ -108,13 +108,16 @@ export default {
     };
   },
   components: {
-   // Banner,
-    //Footer
+    Banner,
+    Footer
   }
 };
 </script>
 
 <style >
+html, body, #app, #app>div {
+  height: 100%
+}
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -122,6 +125,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: black;
+   padding: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
    background-color: #F8F8F8;
 }
 

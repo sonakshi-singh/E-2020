@@ -2,6 +2,7 @@
   <b-container fluid class="factSheet-container">
     <Banner></Banner>
     <div v-if="destination === 'Tokyo'">
+      <button @click="generate_pdf">Generate PDF </button>
       <b-row>
         <b-col xs="6" sm="6" md="6" lg="6" xl="6">
           <p class="tokyo-heading">{{upperCaseDest}} TRAVEL FACTSHEET</p>
@@ -94,6 +95,7 @@ import Banner from "./Banner.vue";
 import Footer from "./Footer.vue";
 import Embassies from "./Embassies.vue"
 import Outlets from "./Outlets.vue"
+import jspdf from "jspdf" 
 
 export default {
   name: "FactSheet",
@@ -122,6 +124,12 @@ export default {
         this.destination = travel;
         console.log("WAIT WHAT", this.destination);
       });
+    },
+    generate_pdf(){
+      console.log("reached this spot")
+      const doc=new jspdf()  
+      doc.text("Fact Sheet Bitches",15,15)
+      doc.save("Bene_Travel.pdf")
     }
   },
   components: {
@@ -136,11 +144,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 @mixin font-weight($font-weight) {
   font-weight: $font-weight;
   text-align: left;
 }
-
 * {
   font-family: "Montserrat", sans-serif;
   color: #333;
@@ -150,7 +158,6 @@ export default {
 }
 
 .factSheet-container {
-
   .download-heading {
     color: lighten(#333, 20%);
     text-align: left;
@@ -159,6 +166,10 @@ export default {
   .tokyo-heading {
     @include font-weight(800);
     letter-spacing: 2px;
+  }
+
+  .country-info {
+    margin: 1em 0 0 0;
   }
 
   .heading {
@@ -182,5 +193,4 @@ export default {
   }
 }
 </style>
-
 

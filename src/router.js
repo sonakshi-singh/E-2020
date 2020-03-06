@@ -16,11 +16,6 @@ export default new Router({
       name: 'home',
       component: Home
     },
-    // {
-    //   path: '/vaccinations',
-    //   name: 'vaccinations',
-    //   component: Vaccinations
-    // },
     {
       path: '/keyPhrases',
       name: 'keyPhrases',
