@@ -95,7 +95,7 @@ import Banner from "./Banner.vue";
 import Footer from "./Footer.vue";
 import Embassies from "./Embassies.vue"
 import Outlets from "./Outlets.vue"
-import jspdf from "jspdf"   
+import jspdf from "jspdf" 
 
 export default {
   name: "FactSheet",
@@ -125,12 +125,13 @@ export default {
         console.log("WAIT WHAT", this.destination);
       });
     },
-  generate_pdf(){
+    generate_pdf(){
       console.log("reached this spot")
       const doc=new jspdf()  
       doc.text("Fact Sheet Bitches",15,15)
       doc.save("Bene_Travel.pdf")
-    }},
+    }
+  },
   components: {
     Vaccinations,
     SafetyRating,  
@@ -143,11 +144,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 @mixin font-weight($font-weight) {
   font-weight: $font-weight;
   text-align: left;
 }
-
 * {
   font-family: "Montserrat", sans-serif;
   color: #333;
@@ -157,7 +158,6 @@ export default {
 }
 
 .factSheet-container {
-
   .download-heading {
     color: lighten(#333, 20%);
     text-align: left;
@@ -166,6 +166,10 @@ export default {
   .tokyo-heading {
     @include font-weight(800);
     letter-spacing: 2px;
+  }
+
+  .country-info {
+    margin: 1em 0 0 0;
   }
 
   .heading {
@@ -189,5 +193,4 @@ export default {
   }
 }
 </style>
-
 
