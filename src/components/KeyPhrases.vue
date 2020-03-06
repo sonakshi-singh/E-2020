@@ -12,7 +12,8 @@
       <b-col xs="6" sm="6" md="6" lg="6" xl="6">
         <div v-bind:key="phrase.id" v-for="phrase in phrases">
           <p align="left">
-            <b>{{phrase.eng_phrase}} -> {{phrase.trans_phrase}}</b>
+           
+            <b>{{phrase.eng_phrase}} <br> {{phrase.trans_phrase}} <b-icon-volume-up-fill></b-icon-volume-up-fill></b>
           </p>
         </div>
       </b-col>
