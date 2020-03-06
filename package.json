@@ -10,14 +10,17 @@
   },
   "dependencies": {
     "@babel/polyfill": "~7.2",
+    "@mdi/font": "^4.9.95",
     "axios": "^0.19.2",
     "bootstrap-vue": "^2.5.0",
     "core-js": "^3.6.4",
     "jquery": "^3.4.1",
     "jspdf": "^1.5.3",
+    "mdi-vue": "^1.4.5",
     "popper.js": "^1.16.1",
     "rss-to-json": "^1.0.5",
     "vue": "^2.6.11",
+    "vue-material-design-icons": "^4.4.0",
     "vue-router": "^3.0.7",
     "xml2js": "^0.4.23"
   },
