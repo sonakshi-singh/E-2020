@@ -1,14 +1,14 @@
 <template>
   <b-navbar class="navbar">
     <b-navbar-brand>
-      <img src="../assets/logo-white.png" />
+      <router-link :to="'/'">
+        <img src="../assets/logo-white.png" />
+      </router-link>
     </b-navbar-brand>
   </b-navbar>
 </template>
 
 <script>
-import Banner from "./Banner.vue";
-
 export default {
   name: "Banner",
   data() {
@@ -21,6 +21,9 @@ export default {
 .navbar {
   background-color: red;
   height: 8em !important;
+  margin-left: -1em !important;
+  
+
   img {
     // position: absolute;
     // left: 40%;
@@ -28,7 +31,6 @@ export default {
     // display: block;
     height: 80%;
     width: 70%;
-    margin-left: -5em;
   }
 }
 

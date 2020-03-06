@@ -84,15 +84,7 @@
         </div> 
         <div v-else align="left">
             <b>Please input data to get results....</b>
-            </div> 
-
-    
-  
-
-
-          
-    
-    -->
+            </div> -->
      <Footer></Footer>
   </b-container>
 </template>

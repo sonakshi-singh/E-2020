@@ -1,7 +1,7 @@
 <template>
   <b-container fluid class="factSheet-container">
     <Banner></Banner>
-    <div v-if="destination === 'Tokyo'">
+    <div v-if="destination === 'Tokyo'" class="country-info">
       <b-row>
         <b-col xs="6" sm="6" md="6" lg="6" xl="6">
           <p class="tokyo-heading">{{upperCaseDest}} TRAVEL FACTSHEET</p>
@@ -150,6 +150,10 @@ export default {
   .tokyo-heading {
     @include font-weight(800);
     letter-spacing: 2px;
+  }
+
+  .country-info {
+    margin: 1em 0 0 0;
   }
 
   .heading {
