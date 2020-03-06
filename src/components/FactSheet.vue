@@ -15,6 +15,7 @@
         <b-row>
           <b-col xs="6" sm="6" md="6" lg="6" xl="6">
             <p class="heading">SAFETY RATING</p>
+            <SafetyRating :country="country" />
           </b-col>
         </b-row>
         <p></p>
@@ -24,7 +25,10 @@
         <b-row>
           <b-col xs="6" sm="6" md="6" lg="6" xl="6">
             <p class="heading">EMERGENCY NUMBERS</p>
-            <p class="content">911</p>
+            <p class="content">110 - Crime and accident</p>
+            <p class="content">119 - Fire and ambulance</p>
+            <p class="heading">CLOSEST EMBASSY</p><br>
+            <Embassies :city="Tokyo"/>
           </b-col>
         </b-row>
       </div>
@@ -76,7 +80,6 @@
         </b-row>
       </div>
     </div>
-    <safety-rating></safety-rating>
     <Footer></Footer>
   </b-container>
 </template>
@@ -87,6 +90,7 @@ import Vaccinations from "./Vaccinations.vue";
 import SafetyRating from "./SafetyRating.vue";
 import Banner from "./Banner.vue";
 import Footer from "./Footer.vue";
+import Embassies from "./Embassies.vue"
 
 export default {
   name: "FactSheet",
@@ -121,7 +125,8 @@ export default {
     Vaccinations,
     SafetyRating,  
     Banner,
-    Footer
+    Footer,
+    Embassies
   }
 };
 </script>

@@ -1,10 +1,9 @@
 <template>
   <div class="ratingBox">
-    <h1 align="left"><b>Safety Rating</b></h1>
     <p align="left">
       <b>{{getCountryID()}}{{rating}}</b>
       <br/>{{message}}
-       <button v-on:click="changeMessage()">See More</button>
+       <button v-on:click='changeMessage()'>See More</button>
     </p>
   </div>
 </template>
@@ -42,7 +41,6 @@ export default {
            }
         if (this.countryID>=0){
              this.rating = this.allRatings[this.countryID].title;
-             console.log(this.allRatings[this.countryID]);
              this.message = this.stripHtml(this.allRatings[this.countryID].description);
              this.shortenMessage();
              this.changeMessage();
@@ -63,6 +61,7 @@ export default {
         var msg = this.altMessage;
         this.altMessage = this.message;
         this.message = msg;
+        console.log(this.message)
       }
     },
     mounted: function() {
