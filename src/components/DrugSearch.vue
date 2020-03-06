@@ -99,9 +99,8 @@
       <b-button variant="info">SHOW RESULTS</b-button>
     </div> 
 
-=======
-            </div> -->
->>>>>>> 53d85f5acad7f8c75478b6199b8a0e092651d971
+
+     
      <Footer></Footer>
   </b-container>
 </template>
