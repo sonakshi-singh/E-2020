@@ -37,7 +37,7 @@
         <b-row>
           <b-col xs="6" sm="6" md="6" lg="6" xl="6">
             <p class="heading">WATER SAFETY</p>
-            <p class="content">Safe to drink tap water</p>
+            <p class="content">Tap water is safe for direct consumption</p>
           </b-col>
         </b-row>
       </div>
@@ -46,7 +46,8 @@
         <b-row>
           <b-col xs="6" sm="6" md="6" lg="6" xl="6">
             <p class="heading">LANGUAGES</p>
-            <p class="content">Japanese</p>
+            <p class="content">Japanese is the main language</p>
+            <p class="content">Most Japanese speak limited English unless you are at popular tourist spots</p>
           </b-col>
         </b-row>
       </div>
@@ -56,6 +57,7 @@
           <b-col xs="6" sm="6" md="6" lg="6" xl="6">
             <p class="heading">OUTLETS</p>
             <p class="content">Type A or B</p>
+            <Outlets/>
           </b-col>
         </b-row>
       </div>
@@ -91,6 +93,7 @@ import SafetyRating from "./SafetyRating.vue";
 import Banner from "./Banner.vue";
 import Footer from "./Footer.vue";
 import Embassies from "./Embassies.vue"
+import Outlets from "./Outlets.vue"
 
 export default {
   name: "FactSheet",
@@ -126,7 +129,8 @@ export default {
     SafetyRating,  
     Banner,
     Footer,
-    Embassies
+    Embassies,
+    Outlets
   }
 };
 </script>
