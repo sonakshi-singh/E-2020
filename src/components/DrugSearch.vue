@@ -84,7 +84,23 @@
         </div> 
         <div v-else align="left">
             <b>Please input data to get results....</b>
-            </div> -->
+<<<<<<< HEAD
+            </div> 
+
+    
+  
+
+
+          
+    
+    -->
+
+     <div>
+      <b-button variant="info">SHOW RESULTS</b-button>
+    </div> 
+
+
+     
      <Footer></Footer>
   </b-container>
 </template>
@@ -178,5 +194,9 @@ b-dropdown
   margin-left:10% ;
   width: 50%;
   background-color: white;
+}
+.btn-info{
+
+background-color: #EF2942;
 }
 </style>
