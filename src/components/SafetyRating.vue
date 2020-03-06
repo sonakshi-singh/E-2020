@@ -55,7 +55,7 @@ export default {
         return temporalDivElement.textContent || temporalDivElement.innerText || "";
       },
       shortenMessage : function(){
-        this.altMessage = this.message.substring(0,80)+"... ";
+        this.altMessage = this.message.substring(0,160)+"... ";
       },
       changeMessage : function(){
         var msg = this.altMessage;

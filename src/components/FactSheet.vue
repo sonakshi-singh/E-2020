@@ -77,8 +77,21 @@
       <div>
         <b-row>
           <b-col xs="6" sm="6" md="6" lg="6" xl="6">
-            <p class="heading">LOCAL TIPS</p>
-            <p class="content">Try some Sushi!</p>
+            <p class="heading">LOCAL HEALTHCARE TIPS</p>
+            <p class="content">Most pharmacies or clinics serve local Japanese residents and might not have English speaking staff on site. Getting medical support in hospitals might be easier for foreign travelers. Travel clinics that serve foreign nationals can also be found in city centres of big metropolitan areas including Tokyo and Osaka.</p>
+            <p class="content">After consulting with a physician, you can fill your prescription in most pharmacies. Those are easily located near most hospital locations.</p>
+            <p class="content">Foreign travelers should expect to pay for their medical bills out of pocket (unless you have specific travel insurance coverage), credit cards and cash are accepted at most hospitals and pharmacies.</p>
+            <p class="content">Choice of OTC medicine is limited in Japan compared to the U.S. as most local people would consult a GP before getting medicine even for the most minor symptoms. Medications available over the counter are usually of weaker dosage than you would find back home. Be sure to check the active ingredient list and consult a pharmacists or healthcare professional if in doubt.</p>
+            
+
+          </b-col>
+        </b-row>
+      </div>
+      <hr />
+      <div>
+        <b-row>
+          <b-col xs="6" sm="6" md="6" lg="6" xl="6">
+            <p class="heading"><u><b-link href="https://wwwnc.cdc.gov/travel/destinations/japan/traveler/packing-list">Healthy Traveler Packing List</b-link></u></p>
           </b-col>
         </b-row>
       </div>
@@ -112,7 +125,7 @@ export default {
       ],
       destination: "Tokyo",
       upperCaseDest: "TOKYO",
-      country: "Hong Kong"
+      country: "Japan"
     };
   },
   created() {
