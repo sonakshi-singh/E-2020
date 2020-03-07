@@ -3,6 +3,7 @@ import App from './App.vue'
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'vue-material-design-icons/styles.css'
 import router from './router';
 
 Vue.config.productionTip = false

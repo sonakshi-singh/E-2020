@@ -2,13 +2,13 @@
   <b-container fluid class="factSheet-container">
     <Banner></Banner>
     <div v-if="destination === 'Tokyo'">
-      <button @click="generate_pdf">Generate PDF </button>
       <b-row>
         <b-col xs="6" sm="6" md="6" lg="6" xl="6">
           <p class="tokyo-heading">{{upperCaseDest}} TRAVEL FACTSHEET</p>
         </b-col>
         <b-col xs="3" sm="3" md="3" lg="3" xl="3">
-          <p class="download-heading">DOWNLOAD</p>
+          <b-button
+              variant="success" @click="generate_pdf">Download </b-button>
         </b-col>
       </b-row>
       <br />
@@ -175,6 +175,10 @@ export default {
   text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.3),
     0px -0px 0px rgba(0, 0, 0, 0.7);
  
+}
+
+html, body {
+  height: 100%
 }
 
 .factSheet-container {
