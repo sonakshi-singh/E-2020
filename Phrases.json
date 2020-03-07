@@ -32,13 +32,13 @@
         },
         {
             "English": "I have a sore throat.",
-            "Japanese": "のどがからから。",
-            "Pronunciation": "Nodo ga karakara. "
+            "Japanese": "のどが痛い。",
+            "Pronunciation": "Nodo ga itai."
         },
         {
             "English": "I have a running nose.",
-            "Japanese": "鼻が走っている。",
-            "Pronunciation": "Hana ga hashitte iru. "
+            "Japanese": "鼻水がでています。",
+            "Pronunciation": "Hanamizuga deteimasu"
         },
         {
             "English": "I think I have caught a cold.",
@@ -47,13 +47,13 @@
         },
         {
             "English": "I have diahrrhea. ",
-            "Japanese": "下痢があります。",
-            "Pronunciation": "Geri ga arimasu."
+            "Japanese": "下痢をしています。",
+            "Pronunciation": "Geri wo shite imasu."
         },
         {
             "English": "I have been vomitting.",
-            "Japanese": "私は嘔吐しています。",
-            "Pronunciation": "Watashi wa ōto shite imasu. "
+            "Japanese": "嘔吐しました。",
+            "Pronunciation": "ōto shimashita"
         },
         {
             "English": "I am feeling dizzy.",
@@ -62,8 +62,8 @@
         },
         {
             "English": "I am suffering from car-sickness.",
-            "Japanese": "私は車酔いに苦しんでいます。",
-            "Pronunciation": "Watashi wa kuruma-yoi ni kurushinde imasu."
+            "Japanese": "私は車酔いしています。",
+            "Pronunciation": "Watashi wa kuruma-yoi wo shite imasu."
         },
         {
             "English": "I have twisted my ankle.",
