@@ -103,7 +103,7 @@ export default {
         { id: 5, eng_phrase: "Please", trans_phrase: "Onegaishimasu" },
         { id: 6, eng_phrase: "Thank You", trans_phrase: "Domo Arigato" }
       ],
-      country: "Hong Kong",
+      country: "Japan",
       travel: ""
     };
   },

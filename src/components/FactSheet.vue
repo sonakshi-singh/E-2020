@@ -66,6 +66,15 @@
       <div>
         <b-row>
           <b-col xs="6" sm="6" md="6" lg="6" xl="6">
+            <p class="heading">Tipping</p>
+            <p class="content">Tipping is not customary in Japan. In fact, it can be considered rude and insulting in many situations.</p>
+          </b-col>
+        </b-row>
+      </div>
+      <hr />
+      <div>
+        <b-row>
+          <b-col xs="6" sm="6" md="6" lg="6" xl="6">
             <p class="heading">VACCINATION REQUIREMENTS</p>
           </b-col>
         </b-row>
@@ -82,8 +91,6 @@
             <p class="content">After consulting with a physician, you can fill your prescription in most pharmacies. Those are easily located near most hospital locations.</p>
             <p class="content">Foreign travelers should expect to pay for their medical bills out of pocket (unless you have specific travel insurance coverage), credit cards and cash are accepted at most hospitals and pharmacies.</p>
             <p class="content">Choice of OTC medicine is limited in Japan compared to the U.S. as most local people would consult a GP before getting medicine even for the most minor symptoms. Medications available over the counter are usually of weaker dosage than you would find back home. Be sure to check the active ingredient list and consult a pharmacists or healthcare professional if in doubt.</p>
-            
-
           </b-col>
         </b-row>
       </div>

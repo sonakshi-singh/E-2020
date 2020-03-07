@@ -12,8 +12,7 @@
       <b-col xs="6" sm="6" md="6" lg="6" xl="6">
         <div v-bind:key="phrase.id" v-for="phrase in phrases">
           <p align="left">
-           
-            <b>{{phrase.eng_phrase}} <br> {{phrase.trans_phrase}} <b-icon-volume-up-fill></b-icon-volume-up-fill></b>
+            <b>English: {{phrase.English}} <br>Japanese: {{phrase.Japanese}}  <br>Pronunciation: {{phrase.Pronunciation}} <b-icon-volume-up-fill></b-icon-volume-up-fill></b>
           </p>
         </div>
       </b-col>
@@ -25,19 +24,12 @@
 <script>
 import Banner from "./Banner.vue";
 import Footer from "./Footer.vue";
-
+import json from "../../Phrases.json"
 export default {
   name: "KeyPhrases",
   data() {
     return {
-      phrases: [
-        { id: 1, eng_phrase: "Hello", trans_phrase: "Konnichiwa" },
-        { id: 2, eng_phrase: "Goodbye", trans_phrase: "Sayonara" },
-        { id: 3, eng_phrase: "Yes", trans_phrase: "Hai" },
-        { id: 4, eng_phrase: "No", trans_phrase: "Lie" },
-        { id: 5, eng_phrase: "Please", trans_phrase: "Onegaishimasu" },
-        { id: 6, eng_phrase: "Thank You", trans_phrase: "Domo Arigato" }
-      ],
+      phrases: json["Sheet1"],
       phrase: "",
       destination: ""
     };
