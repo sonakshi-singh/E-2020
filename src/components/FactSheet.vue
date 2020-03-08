@@ -2,13 +2,13 @@
   <b-container fluid class="factSheet-container">
     <Banner></Banner>
     <div v-if="destination === 'Tokyo'">
-      <button @click="generate_pdf">Generate PDF </button>
       <b-row>
         <b-col xs="6" sm="6" md="6" lg="6" xl="6">
           <p class="tokyo-heading">{{upperCaseDest}} TRAVEL FACTSHEET</p>
         </b-col>
         <b-col xs="3" sm="3" md="3" lg="3" xl="3">
-          <p class="download-heading">DOWNLOAD</p>
+          <b-button
+              variant="success" @click="generate_pdf">Download </b-button>
         </b-col>
       </b-row>
       <br />
@@ -66,6 +66,15 @@
       <div>
         <b-row>
           <b-col xs="6" sm="6" md="6" lg="6" xl="6">
+            <p class="heading">Tipping</p>
+            <p class="content">Tipping is not customary in Japan. In fact, it can be considered rude and insulting in many situations.</p>
+          </b-col>
+        </b-row>
+      </div>
+      <hr />
+      <div>
+        <b-row>
+          <b-col xs="6" sm="6" md="6" lg="6" xl="6">
             <p class="heading">VACCINATION REQUIREMENTS</p>
           </b-col>
         </b-row>
@@ -82,8 +91,6 @@
             <p class="content">After consulting with a physician, you can fill your prescription in most pharmacies. Those are easily located near most hospital locations.</p>
             <p class="content">Foreign travelers should expect to pay for their medical bills out of pocket (unless you have specific travel insurance coverage), credit cards and cash are accepted at most hospitals and pharmacies.</p>
             <p class="content">Choice of OTC medicine is limited in Japan compared to the U.S. as most local people would consult a GP before getting medicine even for the most minor symptoms. Medications available over the counter are usually of weaker dosage than you would find back home. Be sure to check the active ingredient list and consult a pharmacists or healthcare professional if in doubt.</p>
-            
-
           </b-col>
         </b-row>
       </div>
@@ -168,6 +175,10 @@ export default {
   text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.3),
     0px -0px 0px rgba(0, 0, 0, 0.7);
  
+}
+
+html, body {
+  height: 100%
 }
 
 .factSheet-container {

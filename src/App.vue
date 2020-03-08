@@ -1,5 +1,6 @@
 <template >
   <div id="app">
+    <hook-icon />
     <router-view></router-view>
     <!-- <div v-if="travel=='Tokyo'">
       <h2>
@@ -64,6 +65,7 @@
 <script>
 import Banner from "./components/Banner.vue";
 import Footer from "./components/Footer.vue";
+import HookIcon from 'mdi-vue/Hook'
 
 export default {
   name: "App",
@@ -103,20 +105,23 @@ export default {
         { id: 5, eng_phrase: "Please", trans_phrase: "Onegaishimasu" },
         { id: 6, eng_phrase: "Thank You", trans_phrase: "Domo Arigato" }
       ],
-      country: "Hong Kong",
+      country: "Japan",
       travel: ""
     };
   },
   components: {
     Banner,
-    Footer
+    Footer,
+    HookIcon
   }
 };
 </script>
 
 <style >
 html, body, #app, #app>div {
-  height: 100%
+  height: 100%;
+  background-color: #F8F8F8;
+
 }
 
 #app {
@@ -129,7 +134,6 @@ html, body, #app, #app>div {
   margin: 0;
   width: 100%;
   min-height: 100%;
-   background-color: #F8F8F8;
 }
 
 </style>
