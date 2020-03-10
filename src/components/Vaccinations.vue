@@ -1,7 +1,8 @@
 <template>
-  <div class="ratingBox">
+  <div class="ratingBox"><br>
     <div v-bind:key="vac" v-for="vac in vaccinations">
-      <p class="content">{{vac}}</p>
+      <p align="left">
+      <input type="checkbox" align="left">  {{vac}}</p>
     </div>
   </div>
 </template>
