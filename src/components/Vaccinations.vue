@@ -13,8 +13,7 @@ export default {
   name: 'Vaccinations',
   data(){
       return{
-          vaccinations: vac,
-          new: true
+          vaccinations: vac
       }
   },
   created: function() {
