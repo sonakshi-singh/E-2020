@@ -29,7 +29,7 @@
             <p class="content">110 - Crime and accident</p>
             <p class="content">119 - Fire and ambulance</p>
             <p class="heading">CLOSEST EMBASSY</p><br>
-            <Embassies :city="Tokyo"/>
+            <Embassies :City="Tokyo"/>
           </b-col>
         </b-row>
       </div>

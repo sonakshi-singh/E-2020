@@ -22,9 +22,7 @@ export default {
     var vac
 
     for (var i=0; i<len; i++){
-       console.log(this.vaccinations[i])
       if (this.vaccinations[i] == "\nRoutine vaccines\n"){
-        console.log("did i make it?")
         this.vaccinations[i] = "\nOther Routine Vaccines\n"
         vac = this.vaccinations[i]
         this.vaccinations[i] = this.vaccinations[len-1]

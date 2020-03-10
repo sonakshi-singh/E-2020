@@ -3,7 +3,7 @@
     <p align="left">
       <b>{{getCountryID()}}{{rating}}</b>
       <br/>{{message}}
-       <button v-on:click='changeMessage()'>See More</button>
+       <button v-on:click='changeMessage()'>{{seeWhat()}}</button>
     </p>
   </div>
 </template>
@@ -18,7 +18,8 @@ export default {
             countryID:-1,
             allRatings:[],
             message: "",
-            altMessage: ""
+            altMessage: "",
+            expanded: false
         }
     },
     methods: {
@@ -28,11 +29,12 @@ export default {
         Feed.load('https://cors-anywhere.herokuapp.com/https://travel.state.gov/_res/rss/TAsTWs.xml', function(err, rss){
            var countryList = rss.items;
            self.allRatings = countryList;
-           console.log(countryList);
+           //console.log(countryList);
          });
         //response.then(()=>{return 1});
       },
       getCountryID :  function() {
+        if (this.altMessage ==""){
         var len = this.$props.country.length;
         for (var i=0; i<this.allRatings.length; i++){
              if (this.allRatings[i].title.substring(0,len) == this.$props.country){
@@ -45,7 +47,7 @@ export default {
              this.shortenMessage();
              this.changeMessage();
              }
-      },
+      }},
       stripHtml : function (html){
         // Create a new div element
         var temporalDivElement = document.createElement("div");
@@ -61,11 +63,28 @@ export default {
         var msg = this.altMessage;
         this.altMessage = this.message;
         this.message = msg;
-        console.log(this.message)
+        //console.log(this.message)
+        if (this.expanded){
+          this.expanded = false
+        }
+        else{
+          this.expanded = true
+        }
+      },
+      seeWhat : function(){
+        if (this.expanded){
+          return "See More"
+        }
+        else{
+          return "See Less"
+        }
       }
     },
-    mounted: function() {
+    created: function() {
       this.getRatings();
-    } 
+    },
+    mounted: function() {
+      this.getCountryID();
+    }
 }
 </script>
