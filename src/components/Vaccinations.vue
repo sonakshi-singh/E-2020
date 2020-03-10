@@ -13,24 +13,21 @@ export default {
   name: 'Vaccinations',
   data(){
       return{
-          vaccinations: vac
+          vaccinations: vac,
+          new: true
       }
   },
   created: function() {
-    var len = this.vaccinations.length
-    var strlen = 0
-    var vac
-
-    for (var i=0; i<len; i++){
-      if (this.vaccinations[i] == "\nRoutine vaccines\n"){
-        this.vaccinations[i] = "\nOther Routine Vaccines\n"
-        vac = this.vaccinations[i]
-        this.vaccinations[i] = this.vaccinations[len-1]
-        this.vaccinations[len-1] = vac
+      var len = this.vaccinations.length
+      var vac
+      for (var i=0; i<len; i++){
+        if (this.vaccinations[i] == "\nRoutine vaccines\n"){
+          this.vaccinations[i] = "\nOther Routine Vaccines\n"
+          vac = this.vaccinations[i]
+          this.vaccinations[i] = this.vaccinations[len-1]
+          this.vaccinations[len-1] = vac
+        }
       }
-      strlen = this.vaccinations[i].length
-      this.vaccinations[i] = this.vaccinations[i].substring(1,strlen-1)
-    }
   }
 }
 </script>
