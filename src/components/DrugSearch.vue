@@ -49,11 +49,13 @@
     variant="white"
     class="m-2" menu-class="w-100">
  
+ 
     <b-form-group>
-    <b-dropdown-item href="#"> <b-form-radio v-model="selected" name="some-radios" value="A">COLD</b-form-radio> </b-dropdown-item>
-    <b-dropdown-item href="#"> <b-form-radio v-model="selected" name="some-radios" value="B">FEVER</b-form-radio> </b-dropdown-item>
-    <b-dropdown-item href="#"> <b-form-radio v-model="selected" name="some-radios" value="C">COUGH</b-form-radio> </b-dropdown-item>
+    <div v-bind:key="category.id" v-for="category in categories">
+    <b-dropdown-item href="#item"> <b-form-radio v-model="selected" name="some-radios" value="A"> {{category.type}} </b-form-radio> </b-dropdown-item>
+    </div> 
     </b-form-group>
+  
   </b-dropdown>
 </div>
 
@@ -108,11 +110,14 @@
 <script>
 import Banner from "./Banner.vue";
 import Footer from "./Footer.vue";
+import json from "../../categories.json"
 export default {
   name: "DrugSearch",
   props: ["drugs"],
   data(){
       return{
+        categories:json["medicinecategories"],
+        category:"",
         input1: "",
          destination:"" ,
          selected:""
@@ -186,14 +191,12 @@ input
   width: 50%;
   border-radius: 15px;
   padding: 5px;
-  background-color:	#EFEFEF ;
+  background-color:	#EFEFEF;
   margin-left: 25%;
 }
-b-dropdown
-{
-  margin-left:10% ;
-  width: 50%;
-  background-color: white;
+.b-dropdown
+{overflow-y:auto;
+height: auto;
 }
 .btn-info{
 
