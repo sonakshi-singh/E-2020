@@ -34,7 +34,27 @@ class OTC_Search:
         with open('embassies.json', 'w') as outfile:
             json.dump(embassies, outfile)
         
+class Vaccine_Search:
+    search_url = "https://wwwnc.cdc.gov/travel/destinations/traveler/none/japan"
+    image_url="http://search.jsm-db.info/sp_en/"
 
+    def search_medicines(self, keywords):
+        # search_url = self.search_base_url % (keywords.replace(' ', '+'))
+        page_html = requests.get(self.search_url)
+        page_graph = BeautifulSoup(page_html.content)
+        # h=page_graph.find_all('p', {'class', "number"})
+        # print("Total Results",h.number)
+        vaccines=[]
+        #json_data = json.dumps()
+        for i in page_graph.find_all('td', {'class', "traveler-disease"}):
+            # json_data = json.dumps({'embassies'[embasy_num].'id': i.find('strong').text})
+            vaccines.append(i.text)
+            print (i)
+            print(vaccines)
+
+        with open('vaccines.txt', 'w') as outfile:
+            json.dump(vaccines, outfile)
+       
     #     for i in page_graph.find_all('li', {'class', "item"}):
     #         for j in i.find_all('p', {'class', "name"}):
     #             print("inside",j.text)
@@ -72,8 +92,10 @@ class OTC_Search:
     #     urllib.request.urlretrieve(url, fullname)
 
 med = OTC_Search()
+med2 = Vaccine_Search()
 # print("Enter medicine detail")
 # inp=input()
+med2.search_medicines("test")
 med.search_medicines("test")
 # results = rf.scrape_recipe(meat_lasagna)
 

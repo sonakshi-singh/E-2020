@@ -1,27 +1,54 @@
 <template>
-  <div class="hello">
-    <h1 align="left"><b>Vaccinations recommended for travel</b></h1>
-    <div v-bind:key="vac.id" v-for="vac in vaccination">
-      <p align="left">
-       <b> 
-      <input type="checkbox" align="left">
-        {{vac.vacc}}
-      </b>
-      </p>
+  <div class="ratingBox">
+    <div v-bind:key="vac" v-for="vac in vaccinations">
+      <p class="content">{{vac}}</p>
     </div>
-  
   </div>
 </template>
 
 <script>
+import vac from '../../vaccines.json'
 export default {
   name: 'Vaccinations',
-  props: ["vaccination"]
+  data(){
+      return{
+          vaccinations: vac
+      }
+  },
+  created: function() {
+    var len = this.vaccinations.length
+    var strlen = 0
+    var vac
+
+    for (var i=0; i<len; i++){
+       console.log(this.vaccinations[i])
+      if (this.vaccinations[i] == "\nRoutine vaccines\n"){
+        console.log("did i make it?")
+        this.vaccinations[i] = "\nOther Routine Vaccines\n"
+        vac = this.vaccinations[i]
+        this.vaccinations[i] = this.vaccinations[len-1]
+        this.vaccinations[len-1] = vac
+      }
+      strlen = this.vaccinations[i].length
+      this.vaccinations[i] = this.vaccinations[i].substring(1,strlen-1)
+    }
+  }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+@mixin font-weight($font-weight) {
+  font-weight: $font-weight;
+  text-align: left;
+}
+* {
+  font-family: "Montserrat", sans-serif;
+  color: #333;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.3),
+    0px -0px 0px rgba(0, 0, 0, 0.7);
+ 
+}
 
 .is-Complete{
   text-decoration:line-through;
@@ -41,4 +68,11 @@ li {
 a {
   color: #42b983;
 }
+.content {
+    margin: 1em 0 0 0;
+    @include font-weight(400);
+    display: list-item; /* This has to be "list-item"                                               */
+    list-style-type: disc; /* See https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type     */
+    list-style-position: inside;
+  }
 </style>
