@@ -15,7 +15,7 @@
       <div>
         <b-row>
           <b-col xs="6" sm="6" md="6" lg="6" xl="6">
-            <p class="heading">SAFETY RATING</p>
+            <p class="heading">STATE DEPARTMENT SAFETY RATING</p>
             <SafetyRating :country="country" />
           </b-col>
         </b-row>
@@ -29,7 +29,7 @@
             <p class="content">110 - Crime and accident</p>
             <p class="content">119 - Fire and ambulance</p>
             <p class="heading">CLOSEST EMBASSY</p><br>
-            <Embassies :city="Tokyo"/>
+            <Embassies :City="Tokyo"/>
           </b-col>
         </b-row>
       </div>
@@ -76,11 +76,9 @@
         <b-row>
           <b-col xs="6" sm="6" md="6" lg="6" xl="6">
             <p class="heading">VACCINATION REQUIREMENTS</p>
+            <Vaccinations/>
           </b-col>
         </b-row>
-        <div>
-          <Vaccinations v-bind:vaccination="vaccination" />
-        </div>
       </div>
       <hr />
       <div>
@@ -121,7 +119,7 @@ export default {
   name: "FactSheet",
   data() {
     return {
-      vaccination: [
+      vaccinations: [
         { id: 1, vacc: "Hepatitis A" },
         { id: 2, vacc: "Hepatitis B" },
         { id: 3, vacc: "Japanese encephalitis" },

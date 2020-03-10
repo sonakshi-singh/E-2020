@@ -1,6 +1,5 @@
 <template >
   <div id="app">
-    <hook-icon />
     <router-view></router-view>
     <!-- <div v-if="travel=='Tokyo'">
       <h2>
@@ -65,7 +64,6 @@
 <script>
 import Banner from "./components/Banner.vue";
 import Footer from "./components/Footer.vue";
-import HookIcon from 'mdi-vue/Hook'
 
 export default {
   name: "App",
@@ -111,8 +109,7 @@ export default {
   },
   components: {
     Banner,
-    Footer,
-    HookIcon
+    Footer
   }
 };
 </script>
