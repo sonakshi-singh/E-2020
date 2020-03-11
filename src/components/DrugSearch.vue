@@ -38,7 +38,7 @@
                   <br />
                   Alternate Drug Options : {{drug.Alternate}}
                 </b>
-<<<<<<< HEAD
+
                 </p>
                 </div> 
             </div>    
@@ -71,26 +71,7 @@
 
  
   <!--
-=======
-              </p>
-            </div>
-          </div>
-        </div>
 
-        <div>
-          <b-dropdown text="CATEGORY" block variant="white" class="m-2" menu-class="w-100">
-            <b-form-group>
-              <div v-bind:key="category.id" v-for="category in categories">
-                <b-dropdown-item href="#item">
-                  <b-form-radio v-model="selected" name="some-radios" value="A">{{category.type}}</b-form-radio>
-                </b-dropdown-item>
-              </div>
-            </b-form-group>
-          </b-dropdown>
-        </div>
-      </div>
-      <!--
->>>>>>> 240cf2ed52c83809cda0060bda7def693d5b4b2a
       <div v-if="input1!=''">
         <div v-bind:key="drug.id" v-for="drug in drugs">
           <div v-if="(drug.drug==input1.toLowerCase())">
@@ -142,7 +123,7 @@ import json from "../../categories.json";
 export default {
   name: "DrugSearch",
   props: ["drugs"],
-<<<<<<< HEAD
+
   data(){
       return{
         categories:json["medicinecategories"],
@@ -151,16 +132,7 @@ export default {
          destination:"" ,
          picked:""
       };
-=======
-  data() {
-    return {
-      categories: json["medicinecategories"],
-      category: "",
-      input1: "",
-      destination: "",
-      selected: ""
-    };
->>>>>>> 240cf2ed52c83809cda0060bda7def693d5b4b2a
+
   },
 
   methods: {
@@ -228,7 +200,7 @@ input {
   background-color: #efefef;
   margin-left: 25%;
 }
-<<<<<<< HEAD
+
 .b-dropdown
 {
 height: 100px;
@@ -250,14 +222,7 @@ margin-left: 0%;
 }
 
 .btn-info{
-background-color: #EF2942
-=======
-.b-dropdown {
-  overflow-y: auto;
-  height: auto;
-}
-.btn-info {
-  background-color: #ef2942;
->>>>>>> 240cf2ed52c83809cda0060bda7def693d5b4b2a
+background-color: #EF2942; 
+
 }
 </style>
