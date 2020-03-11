@@ -3,7 +3,7 @@
     <p align="left">
       <b>{{getCountryID()}}{{rating}}</b>
       <br/>{{message}}
-       <button v-on:click='changeMessage()'>{{seeWhat()}}</button>
+       <b-button variant="success" v-on:click='changeMessage()'>{{seeWhat()}}</b-button>
     </p>
   </div>
 </template>

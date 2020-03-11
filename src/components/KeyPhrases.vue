@@ -1,30 +1,39 @@
 <template>
-  <b-container fluid class="factSheet-container">
+  <div>
     <Banner></Banner>
-    <b-row>
-      <b-col xs="6" sm="6" md="6" lg="6" xl="6">
-        <h1 align="left">
-          <b>Key Phrases in Japanese</b>
-        </h1>
-      </b-col>
-    </b-row>
-    <b-row>
-      <b-col xs="6" sm="6" md="6" lg="6" xl="6">
-        <div v-bind:key="phrase.id" v-for="phrase in phrases">
-          <p align="left">
-            <b>English: {{phrase.English}} <br>Japanese: {{phrase.Japanese}}  <br>Pronunciation: {{phrase.Pronunciation}} <b-icon-volume-up-fill></b-icon-volume-up-fill></b>
-          </p>
-        </div>
-      </b-col>
-    </b-row>
+    <b-container fluid class="factSheet-container">
+      <b-row>
+        <b-col xs="6" sm="6" md="6" lg="6" xl="6">
+          <h1 align="left">
+            <b>Key Phrases in Japanese</b>
+          </h1>
+        </b-col>
+      </b-row>
+      <b-row>
+        <b-col xs="6" sm="6" md="6" lg="6" xl="6">
+          <div v-bind:key="phrase.id" v-for="phrase in phrases">
+            <p align="left">
+              <b>
+                English: {{phrase.English}}
+                <br />
+                Japanese: {{phrase.Japanese}}
+                <br />
+                Pronunciation: {{phrase.Pronunciation}}
+                <b-icon-volume-up-fill></b-icon-volume-up-fill>
+              </b>
+            </p>
+          </div>
+        </b-col>
+      </b-row>
+    </b-container>
     <Footer></Footer>
-  </b-container>
+  </div>
 </template>
 
 <script>
 import Banner from "./Banner.vue";
 import Footer from "./Footer.vue";
-import json from "../../Phrases.json"
+import json from "../../Phrases.json";
 export default {
   name: "KeyPhrases",
   data() {

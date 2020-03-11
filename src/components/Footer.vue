@@ -20,10 +20,8 @@
         </b-col>
         <b-col sm="3" md="3" lg="3" xl="3">
           <b-nav-item>
-            <router-link :to="'/'">
-              <map-marker-icon />
-              <div>PHARMACY</div>
-            </router-link>
+            <map-marker-icon />
+            <div>PHARMACY</div>
           </b-nav-item>
         </b-col>
         <b-col sm="2" md="2" lg="2" xl="2">
@@ -36,10 +34,8 @@
         </b-col>
         <b-col sm="2" md="2" lg="2" xl="2">
           <b-nav-item>
-            <router-link :to="'/'">
-              <dots-horizontal-icon />
-              <div>SETTINGS</div>
-            </router-link>
+            <dots-horizontal-icon />
+            <div>SETTINGS</div>
           </b-nav-item>
         </b-col>
       </b-row>
