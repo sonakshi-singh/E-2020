@@ -38,6 +38,40 @@
                   <br />
                   Alternate Drug Options : {{drug.Alternate}}
                 </b>
+<<<<<<< HEAD
+                </p>
+                </div> 
+            </div>    
+        </div> 
+</div>
+
+ <b-dropdown text="Category"
+    block
+    variant="white"
+    class="m-2"
+    menu-class="w-100">
+  
+  <div class="dropdown__menu">
+  
+     
+      <div v-bind:key="category.id" v-for="category in categories">
+    <div class="dropdown__menu-item">
+      <input type="radio" v-model="picked" name="some-radios" value="A" style="margin-left:0%;padding:0%;">{{category.type}}
+    </div>
+      </div>
+    
+  </div>
+  
+  
+
+
+</b-dropdown>
+
+
+
+ 
+  <!--
+=======
               </p>
             </div>
           </div>
@@ -56,6 +90,7 @@
         </div>
       </div>
       <!--
+>>>>>>> 240cf2ed52c83809cda0060bda7def693d5b4b2a
       <div v-if="input1!=''">
         <div v-bind:key="drug.id" v-for="drug in drugs">
           <div v-if="(drug.drug==input1.toLowerCase())">
@@ -107,6 +142,16 @@ import json from "../../categories.json";
 export default {
   name: "DrugSearch",
   props: ["drugs"],
+<<<<<<< HEAD
+  data(){
+      return{
+        categories:json["medicinecategories"],
+        category:"",
+        input1: "",
+         destination:"" ,
+         picked:""
+      };
+=======
   data() {
     return {
       categories: json["medicinecategories"],
@@ -115,6 +160,7 @@ export default {
       destination: "",
       selected: ""
     };
+>>>>>>> 240cf2ed52c83809cda0060bda7def693d5b4b2a
   },
 
   methods: {
@@ -182,11 +228,36 @@ input {
   background-color: #efefef;
   margin-left: 25%;
 }
+<<<<<<< HEAD
+.b-dropdown
+{
+height: 100px;
+width: auto;
+
+}
+.b-dropdown-item
+{margin-left: 0%;
+overflow-y:scroll;
+height: 10px;
+
+
+}
+.dropdown__menu
+{
+overflow-y:scroll;
+height: 50px;
+margin-left: 0%;
+}
+
+.btn-info{
+background-color: #EF2942
+=======
 .b-dropdown {
   overflow-y: auto;
   height: auto;
 }
 .btn-info {
   background-color: #ef2942;
+>>>>>>> 240cf2ed52c83809cda0060bda7def693d5b4b2a
 }
 </style>
