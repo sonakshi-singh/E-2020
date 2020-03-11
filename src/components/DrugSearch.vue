@@ -40,26 +40,33 @@
                 </div> 
             </div>    
         </div> 
+</div>
 
-
-<div>
-  
-  <b-dropdown text="CATEGORY" 
+ <b-dropdown text="Category"
     block
     variant="white"
-    class="m-2" menu-class="w-100">
- 
- 
-    <b-form-group>
-    <div v-bind:key="category.id" v-for="category in categories">
-    <b-dropdown-item href="#item"> <b-form-radio v-model="selected" name="some-radios" value="A"> {{category.type}} </b-form-radio> </b-dropdown-item>
-    </div> 
-    </b-form-group>
+    class="m-2"
+    menu-class="w-100">
   
-  </b-dropdown>
-</div>
+  <div class="dropdown__menu">
+  
+     
+      <div v-bind:key="category.id" v-for="category in categories">
+    <div class="dropdown__menu-item">
+      <input type="radio" v-model="picked" name="some-radios" value="A" style="margin-left:0%;padding:0%;">{{category.type}}
+    </div>
+      </div>
+    
+  </div>
+  
+  
 
-</div>
+
+</b-dropdown>
+
+
+
+ 
   <!--
       <div v-if="input1!=''">
         <div v-bind:key="drug.id" v-for="drug in drugs">
@@ -120,7 +127,7 @@ export default {
         category:"",
         input1: "",
          destination:"" ,
-         selected:""
+         picked:""
       };
   },
  
@@ -195,11 +202,26 @@ input
   margin-left: 25%;
 }
 .b-dropdown
-{overflow-y:auto;
-height: auto;
-}
-.btn-info{
+{
+height: 100px;
+width: auto;
 
-background-color: #EF2942;
+}
+.b-dropdown-item
+{margin-left: 0%;
+overflow-y:scroll;
+height: 10px;
+
+
+}
+.dropdown__menu
+{
+overflow-y:scroll;
+height: 50px;
+margin-left: 0%;
+}
+
+.btn-info{
+background-color: #EF2942
 }
 </style>
