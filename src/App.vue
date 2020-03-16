@@ -62,8 +62,6 @@
 </template>
 
 <script>
-import Banner from "./components/Banner.vue";
-import Footer from "./components/Footer.vue";
 
 export default {
   name: "App",
@@ -108,8 +106,6 @@ export default {
     };
   },
   components: {
-    Banner,
-    Footer
   }
 };
 </script>
