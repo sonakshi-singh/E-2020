@@ -11,7 +11,7 @@
               <!-- <div class="mt-3">
                 Selected:
                 <strong>{{ travel }}</strong>
-              </div> -->
+              </div>-->
               <!-- <b-form-input
                 type="text"
                 v-model="travel"
@@ -97,14 +97,7 @@ $button-color: #e7eff9;
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
-  height: 100%;
-
-  .buttons {
-    position: relative;
-    top: 20%;
-    transform: translateY(-50%);
-    display: inline;
-  }
+  min-height: 100%;
 
   .enter-dest {
     position: relative;
@@ -112,7 +105,7 @@ $button-color: #e7eff9;
     transform: translateY(-50%);
 
     .content {
-      margin: 2em 0 0 0;
+      margin: 20em 0 0 0;
     }
 
     .input {
@@ -120,6 +113,13 @@ $button-color: #e7eff9;
     }
   }
 }
+
+ .buttons {
+    position: relative;
+    // top: 25%;
+    transform: translateY(-25%);
+    // display: inline;
+  }
 
 .btn-warning,
 .btn-success,
