@@ -20,7 +20,7 @@ npm install
 npm run dev
 ```
 
-### running the previous command will open a new tab on your browser pointing to https://localhost:8000
+#### running the previous command will open a new tab on your browser pointing to https://localhost:8000
 
 ### Compiles and minifies for production
 ```
