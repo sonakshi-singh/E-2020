@@ -10,11 +10,11 @@ import json
 #                "pinch", "links", "link"]
 
 
-class OTC_Search:
+class Embassy_Search:
     search_url = "https://www.usembassy.gov/japan/"
     image_url="http://search.jsm-db.info/sp_en/"
 
-    def search_medicines(self, keywords):
+    def search_embassies(self, keywords):
         # search_url = self.search_base_url % (keywords.replace(' ', '+'))
         page_html = requests.get(self.search_url)
         page_graph = BeautifulSoup(page_html.content)
@@ -38,7 +38,7 @@ class Vaccine_Search:
     search_url = "https://wwwnc.cdc.gov/travel/destinations/traveler/none/japan"
     image_url="http://search.jsm-db.info/sp_en/"
 
-    def search_medicines(self, keywords):
+    def search_vaccines(self, keywords):
         # search_url = self.search_base_url % (keywords.replace(' ', '+'))
         page_html = requests.get(self.search_url)
         page_graph = BeautifulSoup(page_html.content)
@@ -91,12 +91,12 @@ class Vaccine_Search:
     #     name = str(url.split('/')[-1])
     #     urllib.request.urlretrieve(url, fullname)
 
-med = OTC_Search()
+med = Embassy_Search()
 med2 = Vaccine_Search()
 # print("Enter medicine detail")
 # inp=input()
-med2.search_medicines("test")
-med.search_medicines("test")
+med.search_embassies("test")
+med2.search_vaccines("test")
 # results = rf.scrape_recipe(meat_lasagna)
 
 # import fractions
