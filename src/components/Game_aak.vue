@@ -64,6 +64,7 @@ export default {
   methods: {
      submit() {
         // this.gameComplete=true;
+        
         if(this.question<this.num_questions-1){
             console.log("button clicked",this.question)
             // console.log("HELL",(this.questions[this.question].country).toLowerCase())
@@ -79,6 +80,7 @@ export default {
         else{
             this.gameComplete=true
         }
+        this.msg=
         console.log(this.locate)
         return
     }
@@ -112,7 +114,7 @@ body {
 }
 
 .title{
-    text-decoration:lightgray;
+    font-style:bold;
 }
 .img{
     height:400px;
@@ -120,7 +122,7 @@ body {
 }
 
 .tag{
-    text-decoration:italic;
+    font-style:italic;
 }
 .overlay{
     

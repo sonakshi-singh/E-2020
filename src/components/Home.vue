@@ -31,7 +31,6 @@
                     variant="warning"
                     @click="destEntered"
                     class="game-buttons"
-                    color="red"
                   >Play Bene Travel Game</b-button>
                 </router-link>
             </div>
@@ -137,11 +136,16 @@ $button-color: #e7eff9;
   }
 
 .btn-warning {
-  background-color: red;
-  border-color: darken(red, 15%);
-  color: darken(red, 50%);
+   background: rgba(76, 175, 80,0.33);
+  // opacity:0.3;
+  // background-image: linear-gradient(315deg, #e7eff9 0%, #cfd6e6 30%);
+  border-color: darken($button-color, 15%);
+  color: darken(black, 100%);
+  font-style:bold;
+  font-size:15px;
   height: 8em;
   word-break: break-word;
+  width: 50%;
   width: 50%;
 }
 .btn-success,
