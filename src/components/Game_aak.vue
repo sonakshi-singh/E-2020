@@ -7,14 +7,17 @@
       <input v-model="message" placeholder="type country name here">
       </p> -->
       <div v-if='gameComplete == false' >
-        <h1>Bene Travel Mania</h1>
+        <h1 class='title'>Bene Travel Mania</h1>
+        <h2 class="tag"> Guess the country ? </h2>
         <br/>
         <b-img :src=locate class="img"></b-img>
         <br/>
-        <span>
-        <input type="text" v-model='msg' placeholder="type country name here">
-        <button v-on:click="submit">submit</button>
-        </span>
+        <div>
+        <p class="overlay">  
+        <input type="text" v-model='msg' placeholder="type country name here "> 
+        <button v-on:click="submit">Submit</button>
+        </p>
+        </div>
         <h1></h1>
         </div>
         <div v-if='gameComplete == true' class="test" >
@@ -107,10 +110,24 @@ body {
     padding:25px;
     // border:5px solid red;    
 }
+
+.title{
+    text-decoration:lightgray;
+}
 .img{
     height:400px;
     width:700px;
 }
+
+.tag{
+    text-decoration:italic;
+}
+.overlay{
+    
+    margin:10px;
+    padding:10px;
+}
+
 .factSheet-container {
   margin: 1em 0 0 0;
 
