@@ -25,7 +25,24 @@
         <h1>Thank you for taking the quiz with us</h1>
         
             <h2>Result: {{this.res}}/{{this.num_questions}} </h2>
-
+            <div v-bind:key="q" v-for="q in correct" class="factSheet-container">
+              <div v-if='q[1]==true'>
+                Correct: {{questions[q[0]].country}}
+                <b-img :src='questions[q[0]].image' class="small_img"></b-img>
+                <router-link :to="'factSheet'">
+                  <button v-on:click="submit">Plan a trip?</button>
+                </router-link>
+              </div>
+            </div>
+            <div v-bind:key="q" v-for="q in correct" class="factSheet-container">
+              <div v-if='q[1]==false'>
+                Incorrect: {{questions[q[0]].country}}
+                <b-img :src='questions[q[0]].image' class="small_img"></b-img>
+                <router-link :to="'factSheet'">
+                  <button v-on:click="submit">Plan a trip?</button>
+                </router-link>
+              </div>
+            </div>
         <h1></h1>
         </div>
   </div>
@@ -43,12 +60,14 @@ export default {
         { country: "Thailand", image: "https://i.imgur.com/bCcNhRS.png" },
         { country: "Hong Kong", image: "https://i.imgur.com/EpfJGWQ.png" },
         { country: "China", image: "https://i.imgur.com/BjnarRv.png" },
-        { country: "Singapore", image: "https://i.imgur.com/49AbYZB.png" }
-        ], 
+        { country: "Singapore", image: "https://i.imgur.com/49AbYZB.png" },
+        { country: "Japan", image: "https://i.imgur.com/j0ccf4R.png" }
+       ],
+      correct: [], 
       question: 0,
       msg:"",
       res:0,
-      num_questions: 4,
+      num_questions: 5,
       gameComplete: false,
       upperCaseDest: "TOKYO",
       country: "Japan",
@@ -61,6 +80,9 @@ export default {
     this.gameComplete = false
     this.res = 0
     this.locate=this.questions[0].image
+    for (var i=0; i<this.num_questions; i++){
+      this.correct[i] = [i,false]
+    }
   },
   methods: {
      submit() {
@@ -72,6 +94,7 @@ export default {
             if(this.msg.toLowerCase()==((this.questions[this.question].country).toLowerCase()))
             {
                 this.res++;
+                this.correct[this.question][1] = true
                 console.log("correct")
             }
             this.question++;
@@ -83,6 +106,7 @@ export default {
           if(this.msg.toLowerCase()==((this.questions[this.question].country).toLowerCase()))
             {
                 this.res++;
+                this.correct[this.question][1] = true
             }
             this.gameComplete=true
         }
@@ -126,6 +150,10 @@ body {
     height:400px;
     width:700px;
 }
+.small_img{
+    height:120px;
+    width:210px;
+}
 
 .tag{
     font-style:italic;
@@ -138,6 +166,7 @@ body {
 
 .factSheet-container {
   margin: 1em 0 0 0;
+  text-align: left;
 
   .download {
     color: white;
