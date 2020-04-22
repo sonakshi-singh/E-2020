@@ -4,7 +4,7 @@ import DrugSearch from './components/DrugSearch.vue'
 import KeyPhrases from './components/KeyPhrases.vue'
 import FactSheet from './components/FactSheet.vue'
 import Home from './components/Home.vue'
-import Game from './components/Game.vue'
+import Game from './components/Game_aak.vue'
 
 
 Vue.use(Router)
