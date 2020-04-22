@@ -4,6 +4,7 @@ import DrugSearch from './components/DrugSearch.vue'
 import KeyPhrases from './components/KeyPhrases.vue'
 import FactSheet from './components/FactSheet.vue'
 import Home from './components/Home.vue'
+import Game from './components/Game.vue'
 
 
 Vue.use(Router)
@@ -31,5 +32,10 @@ export default new Router({
       name: 'factSheet',
       component: FactSheet
     },
+    {
+      path: '/Game',
+      name: 'Game',
+      component: Game
+    }
   ]
 })

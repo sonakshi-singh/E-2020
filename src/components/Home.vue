@@ -22,6 +22,21 @@
             </div>
           </b-col>
         </b-row>
+        <br><br>
+        <b-row no-gutters>
+          <b-col xs="12" sm="12" md="9" offset-md="2" lg="6" offset-lg="3" xl="6" offset-xl="3">
+            <div class="buttons">
+                <router-link :to="'Game'">
+                  <b-button
+                    variant="warning"
+                    @click="destEntered"
+                    class="game-buttons"
+                    color="red"
+                  >Play Bene Travel Game</b-button>
+                </router-link>
+            </div>
+          </b-col>
+        </b-row>
       </div>
       <div class="buttons">
         <b-row no-gutters>
@@ -41,7 +56,7 @@
           <b-col xs="6" sm="6" md="6" lg="3" xl="3">
             <router-link :to="'factSheet'">
               <b-button
-                variant="warning"
+                variant="info"
                 @click="destEntered"
                 :disabled="!travel"
               >Traveler Factsheet</b-button>
@@ -50,7 +65,7 @@
           <b-col xs="6" sm="6" md="6" lg="3" xl="3">
             <router-link :to="'keyPhrases'">
               <b-button
-                variant="warning"
+                variant="info"
                 @click="destEntered"
                 :disabled="!travel"
               >Medical Phrasebook</b-button>
@@ -121,7 +136,14 @@ $button-color: #e7eff9;
     // display: inline;
   }
 
-.btn-warning,
+.btn-warning {
+  background-color: red;
+  border-color: darken(red, 15%);
+  color: darken(red, 50%);
+  height: 8em;
+  word-break: break-word;
+  width: 50%;
+}
 .btn-success,
 .btn-info {
   background-color: $button-color;
