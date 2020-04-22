@@ -59,6 +59,7 @@ export default {
   created() {
     this.question = 0
     this.gameComplete = false
+    this.res = 0
     this.locate=this.questions[0].image
   },
   methods: {
@@ -71,6 +72,7 @@ export default {
             if(this.msg.toLowerCase()==((this.questions[this.question].country).toLowerCase()))
             {
                 this.res++;
+                console.log("correct")
             }
             this.question++;
             console.log("button clicked",this.question)
@@ -78,6 +80,10 @@ export default {
             // window.location.reload()
         }
         else{
+          if(this.msg.toLowerCase()==((this.questions[this.question].country).toLowerCase()))
+            {
+                this.res++;
+            }
             this.gameComplete=true
         }
         this.msg=
