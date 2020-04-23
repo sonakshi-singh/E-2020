@@ -33,8 +33,6 @@
                   <button v-on:click="submit">Plan a trip?</button>
                 </router-link>
               </div>
-            </div>
-            <div v-bind:key="q" v-for="q in correct" class="factSheet-container">
               <div v-if='q[1]==false'>
                 Incorrect: {{questions[q[0]].country}}
                 <b-img :src='questions[q[0]].image' class="small_img"></b-img>
