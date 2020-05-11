@@ -5,6 +5,7 @@ import KeyPhrases from './components/KeyPhrases.vue'
 import FactSheet from './components/FactSheet.vue'
 import Home from './components/Home.vue'
 import Game from './components/Game_aak.vue'
+import Upload from './components/upload.vue'
 
 
 Vue.use(Router)
@@ -36,6 +37,12 @@ export default new Router({
       path: '/Game',
       name: 'Game',
       component: Game
+    },
+    {
+      path: '/upload',
+      name: 'upload',
+      component: Upload
     }
+
   ]
 })
