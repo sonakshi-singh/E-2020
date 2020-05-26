@@ -7,6 +7,9 @@
           <b-col xs="12" sm="12" md="9" offset-md="2" lg="6" offset-lg="3" xl="6" offset-xl="3">
             <div class="content">
               <h1>WHERE ARE YOU GOING ?</h1>
+              
+<button id="start-togetherjs">Start TogetherJS</button>              
+
               <b-form-select v-model="travel" :options="options"></b-form-select>
               <!-- <div class="mt-3">
                 Selected:
@@ -78,6 +81,7 @@
 
 <script>
 import Banner from "./Banner.vue";
+import { MarkerArea } from 'markerjs';
 
 export default {
   name: "Home",
