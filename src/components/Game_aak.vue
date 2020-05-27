@@ -49,6 +49,8 @@
 
 <script>
 import Banner from "./Banner.vue";
+import GoogleLogin from 'vue-google-login';
+
 
 export default {
   name: "Game",
@@ -70,6 +72,16 @@ export default {
       upperCaseDest: "TOKYO",
       country: "Japan",
       locate:"",
+      params: 
+      {
+          client_id: "991176984652-n9j3cc8mk83kgc2tc6hn0i1ubcpt3qod.apps.googleusercontent.com"
+      },
+                // only needed if you want to render the button with the google ui
+      renderParams: {
+          width: 250,
+          height: 50,
+          longtitle: true
+      }
 
     };
   },
@@ -114,7 +126,8 @@ export default {
     }
   },
   components: {
-    Banner
+    Banner,
+    GoogleLogin
   }
 };
 </script>
