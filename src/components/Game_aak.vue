@@ -123,7 +123,20 @@ export default {
         this.msg=
         console.log(this.locate)
         return
-    }
+    },
+    onSuccess(googleUser) {
+          console
+            console.log(googleUser);
+ 
+            // This only gets the user information: id, name, imageUrl and email
+            console.log(googleUser.getBasicProfile());
+        },
+        onFailure(error) {
+            console.log(error);
+ 
+            // This only gets the user information: id, name, imageUrl and email
+            // console.log(googleUser.getBasicProfile());
+        }
   },
   components: {
     Banner,
