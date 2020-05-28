@@ -3,6 +3,8 @@
     <!-- <div style="background-image: url(./src/body.jpg);"> -->
     <!-- <img alt="Vue logo" src="./body.jpg"> -->
     <h1 style="font-size:60px;">Welcome to Bene</h1>
+    <h2>Name:  </h2>
+    <input  :value="this.username" placeholder ="username" @change="nameChange">
     <div class="testing">
       <h2>This was successful</h2>
       <input type="file" @change="onFileChanged">
@@ -16,16 +18,22 @@
       </div>
     </div>
 </template>
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.24.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+//Bucket Configurations
 
+</script>
 <script>
 // import axios from "axios"
-
+import uploadImage from "../awsCalls/uploadImage.js"
 export default {
   name: 'Upload',
   data(){
     return{
       file:[],
-      test:true  
+      test:true,
+      username: "" 
     }   
   },
   
@@ -38,7 +46,11 @@ export default {
     onFileChanged (event) {
     this.file = event.target.files[0]
     console.log(this.file)
-
+    
+  },
+  nameChange(event){
+    console.log(event.target.value)
+    this.username = event.target.value
   },
   onUpload() {
     // upload file
@@ -50,6 +62,7 @@ export default {
     console.log("upload file")
     console.log(this.test,"yo")
     console.log("hehheeh")
+    uploadImage(this.file,this.username)
   }
     
     },
