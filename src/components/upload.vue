@@ -14,26 +14,24 @@
         <img class="ret" id="uploaded" src="https://benetravel.s3.us-east-2.amazonaws.com/efc44718b9d1b7d960366a3bfa89f5c5.jpg">
       </div>
       <div v-if ='test!=true'>
-        <img class="ret" src= this.file >
+        <img class="ret" src= this.file2 >
       </div>
     </div>
 </template>
-<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.24.min.js"></script>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript">
-//Bucket Configurations
 
-</script>
 <script>
 // import axios from "axios"
 import uploadImage from "../awsCalls/uploadImage.js"
+import getImage from "../awsCalls/getImage.js"
 export default {
   name: 'Upload',
   data(){
     return{
       file:[],
       test:true,
-      username: "" 
+      username: "",
+      imageName : "",
+      file2:false
     }   
   },
   
@@ -49,8 +47,9 @@ export default {
     
   },
   nameChange(event){
-    console.log(event.target.value)
     this.username = event.target.value
+   // console.log(this.file2)
+
   },
   onUpload() {
     // upload file
@@ -59,10 +58,12 @@ export default {
     
 	image.src = URL.createObjectURL(this.file);   
     alert("This was succesful")
-    console.log("upload file")
-    console.log(this.test,"yo")
-    console.log("hehheeh")
+    //console.log("upload file")
+    //console.log(this.test,"yo")
+    // console.log("hehheeh")
     uploadImage(this.file,this.username)
+    this.imageName = this.username + "/" + this.file.name
+    this.file2 = getImage(this.imageName)
   }
     
     },
