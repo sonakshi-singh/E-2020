@@ -1,6 +1,7 @@
 <template>
   <div>
     <Banner></Banner>
+    <h1>Test</h1>
      <!-- <div v-bind:key="q" v-for="q in questions">
       <p align="left">
       <b-img :src= "q.image"></b-img>
@@ -8,6 +9,9 @@
       </p> -->
       <div v-if='gameComplete == false' >
         <h1 class='title'>Bene Travel Mania</h1>
+        <!-- <GoogleLogin id ="test" :params="params" :onSuccess="onSuccess" :onFailure="onFailure">Login</GoogleLogin>  -->
+        <GoogleLogin :params="params" :renderParams="renderParams" :onSuccess="onSuccess" :onFailure="onFailure"></GoogleLogin>
+        <GoogleLogin :params="params" :logoutButton=true>Logout</GoogleLogin>
         <h2 class="tag"> Guess the country ? </h2>
         <br/>
         <b-img :src=locate class="img"></b-img>
@@ -49,7 +53,7 @@
 
 <script>
 import Banner from "./Banner.vue";
-//import GoogleLogin from 'vue-google-login';
+import GoogleLogin from 'vue-google-login';
 
 
 export default {
@@ -139,8 +143,8 @@ export default {
         }
   },
   components: {
-    Banner
-//    GoogleLogin
+    Banner,
+   GoogleLogin
   }
 };
 </script>
@@ -167,6 +171,10 @@ body {
     // border:5px solid red;    
 }
 
+#test{
+  color:red;
+  // background-color:red;
+}
 .title{
     font-style:bold;
 }
