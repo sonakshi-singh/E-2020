@@ -1,8 +1,7 @@
-<!--
 <template >
   <div id="upload-container">
     <!-- <div style="background-image: url(./src/body.jpg);"> -->
-    <!-- <img alt="Vue logo" src="./body.jpg">  
+    <!-- <img alt="Vue logo" src="./body.jpg"> -->
     <h1 style="font-size:60px;">Welcome to Bene</h1>
     <h2>Name:  </h2>
     <input  :value="this.username" placeholder ="username" @change="nameChange">
@@ -91,4 +90,4 @@ export default {
   margin-top: 60px;
 }
 
-</style>-->
+</style>
