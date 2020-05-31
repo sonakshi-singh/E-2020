@@ -49,7 +49,7 @@
 
 <script>
 import Banner from "./Banner.vue";
-import GoogleLogin from 'vue-google-login';
+//import GoogleLogin from 'vue-google-login';
 
 
 export default {
@@ -139,8 +139,8 @@ export default {
         }
   },
   components: {
-    Banner,
-    GoogleLogin
+    Banner
+//    GoogleLogin
   }
 };
 </script>
