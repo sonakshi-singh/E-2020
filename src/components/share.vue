@@ -1,5 +1,5 @@
 <template >
-  <div id="upload-container">
+  <div>
     <!-- <div style="background-image: url(./src/body.jpg);"> -->
     <!-- <img alt="Vue logo" src="./body.jpg"> -->
     <h1 style="font-size:60px;">Welcome to Bene</h1>
@@ -8,7 +8,7 @@
     <div class="testing">
       <h2>This was successful</h2>
       <div id="sharing">
-      <facebook :url="url" scale="3"></facebook>
+      <facebook id="icon" :url="url" scale="3"></facebook>
         <twitter :url="url" title="Check me on Github" scale="3"></twitter>
         <linkedin :url="url" scale="3"></linkedin>
         <telegram :url="url" scale="3"></telegram>
@@ -18,6 +18,7 @@
         <google :url="url" scale="3"></google>
         <email :url="url" subject="Hello" scale="3"></email>
       </div>
+      <br/>
       <input type="file" @change="onFileChanged">
       <button @click="onUpload">Upload!</button>  
       </div>
@@ -59,7 +60,8 @@ export default {
       test:true,
       username: "",
       imageName : "",
-      file2:false
+      file2:false,
+      url:"https://github.com/AakashKhuranaNU"
     }   
   },
   
@@ -117,11 +119,11 @@ export default {
     padding:20px;
 }
 
-#sharing{
-    margin:5px;
-    padding: 5px;
-    outline: solid red;
+#sharing > span {
+  padding: 1em;
 }
+
+
 
 /* #upload-container { 
   /* background-image: url("./body.jpg");
