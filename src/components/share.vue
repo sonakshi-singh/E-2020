@@ -7,6 +7,17 @@
     <input  :value="this.username" placeholder ="username" @change="nameChange">
     <div class="testing">
       <h2>This was successful</h2>
+      <div id="sharing">
+      <facebook :url="url" scale="3"></facebook>
+        <twitter :url="url" title="Check me on Github" scale="3"></twitter>
+        <linkedin :url="url" scale="3"></linkedin>
+        <telegram :url="url" scale="3"></telegram>
+        <whats-app :url="url" title="Hello" scale="3"></whats-app>
+        <pinterest :url="url" scale="3"></pinterest>
+        <reddit :url="url" scale="3" title="My Github"></reddit>
+        <google :url="url" scale="3"></google>
+        <email :url="url" subject="Hello" scale="3"></email>
+      </div>
       <input type="file" @change="onFileChanged">
       <button @click="onUpload">Upload!</button>  
       </div>
@@ -106,16 +117,22 @@ export default {
     padding:20px;
 }
 
-#upload-container { 
+#sharing{
+    margin:5px;
+    padding: 5px;
+    outline: solid red;
+}
+
+/* #upload-container { 
   /* background-image: url("./body.jpg");
   background-size: length; */
-  /* background-color: darkslategray; */
+  /* background-color: darkslategray; 
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color:black;
   margin-top: 60px;
-}
+} */
 
 </style>
