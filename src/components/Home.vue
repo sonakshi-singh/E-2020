@@ -2,7 +2,7 @@
   <div>
     <Banner></Banner>
     <b-container fluid class="home-container">
-      <div class="enter-dest" id="mydiv" ref="myid">
+      <div class="enter-dest" id="mydiv" ref="myImage">
         <b-row>
           <b-col xs="12" sm="12" md="9" offset-md="2" lg="6" offset-lg="3" xl="6" offset-xl="3">
             <div class="content">
@@ -100,9 +100,19 @@ export default {
     togetherScript.async = true
     document.head.appendChild(togetherScript)
 
-    this.$nextTick(function () {
-    console.log(this.$refs.myid)
-  })
+
+
+    const mark = new MarkerArea(this.$refs.myImage)
+    console.log('mark', mark);
+    mark.show((dataUrl) => {
+      const res = this.$ref.resultImage
+      res.src = dataUrl
+      console.log('is it reaching here?')
+    });
+
+  //   this.$nextTick(function () {
+  //   console.log(this.$refs.myid)
+  // })
   },
   methods: {
     destEntered() {
