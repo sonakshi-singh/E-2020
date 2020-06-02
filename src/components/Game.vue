@@ -14,6 +14,7 @@
 <script>
 import Banner from "./Banner.vue";
 
+
 export default {
   name: "Game",
   data() {

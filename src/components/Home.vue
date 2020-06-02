@@ -29,7 +29,7 @@
         <b-row no-gutters>
           <b-col xs="12" sm="12" md="9" offset-md="2" lg="6" offset-lg="3" xl="6" offset-xl="3">
             <div class="buttons">
-                <router-link :to="'upload'">
+                <router-link :to="'Game'">
                   <b-button
                     variant="warning"
                     @click="destEntered"
