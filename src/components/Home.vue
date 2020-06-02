@@ -2,13 +2,13 @@
   <div>
     <Banner></Banner>
     <b-container fluid class="home-container">
-      <div class="enter-dest">
+      <div class="enter-dest" id="mydiv" ref="myid">
         <b-row>
           <b-col xs="12" sm="12" md="9" offset-md="2" lg="6" offset-lg="3" xl="6" offset-xl="3">
             <div class="content">
               <h1>WHERE ARE YOU GOING ?</h1>
               
-<button id="start-togetherjs">Start TogetherJS</button>              
+            <button id="start-togetherjs" @click="TogetherJS(this); return false;">Start TogetherJS</button>              
 
               <b-form-select v-model="travel" :options="options"></b-form-select>
               <!-- <div class="mt-3">
@@ -93,6 +93,16 @@ export default {
         { value: "Tokyo", text: "Tokyo" }
       ]
     };
+  },
+  mounted() {
+    let togetherScript = document.createElement('script')
+    togetherScript.setAttribute('src', 'https://togetherjs.com/togetherjs-min.js')
+    togetherScript.async = true
+    document.head.appendChild(togetherScript)
+
+    this.$nextTick(function () {
+    console.log(this.$refs.myid)
+  })
   },
   methods: {
     destEntered() {
