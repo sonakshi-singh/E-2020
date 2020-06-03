@@ -7,6 +7,7 @@ import Home from './components/Home.vue'
 import Game from './components/Game_aak.vue'
 import Upload from './components/upload.vue'
 import Share from './components/share.vue'
+import TemplatePage from './components/TemplatePage.vue'
 
 
 Vue.use(Router)
@@ -38,6 +39,11 @@ export default new Router({
       path: '/Game',
       name: 'Game',
       component: Game
+    },
+    {
+      path: '/TemplatePage',
+      name: 'TemplatePage',
+      component: TemplatePage
     },
     {
       path: '/upload',
