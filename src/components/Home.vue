@@ -83,10 +83,14 @@
 import Banner from "./Banner.vue";
 import { MarkerArea } from 'markerjs';
 
-let WebSocketJSONStream = require('@teamwork/websocket-json-stream');
 
 let ShareDB = require('sharedb');
 let share = new ShareDB(options);
+
+let WebSocketJSONStream = require('@teamwork/websocket-json-stream');
+
+var stream = new WebSocketJSONStream(ws);
+share.listen(stream);
 
 export default {
   name: "Home",

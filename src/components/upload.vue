@@ -24,7 +24,7 @@
 import uploadImage from "../awsCalls/uploadImage.js"
 import getImage from "../awsCalls/getImage.js"
 export default {
-  name: 'Upload',
+  name: 'upload',
   data(){
     return{
       file:[],

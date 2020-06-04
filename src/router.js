@@ -1,13 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import DrugSearch from './components/DrugSearch.vue'
-import KeyPhrases from './components/KeyPhrases.vue'
-import FactSheet from './components/FactSheet.vue'
-import Home from './components/Home.vue'
-import Game from './components/Game_aak.vue'
-import Upload from './components/upload.vue'
-import Share from './components/share.vue'
-import TemplatePage from './components/TemplatePage.vue'
+
+// import Home from './components/Home.vue'
+import login from './components/Login.vue'
+import upload from './components/upload.vue'
+import share from './components/share.vue'
+import templatePage from './components/TemplatePage.vue'
+import gallery from './components/Gallery.vue'
 
 
 Vue.use(Router)
@@ -17,43 +16,28 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      name: 'login',
+      component: login
     },
     {
-      path: '/keyPhrases',
-      name: 'keyPhrases',
-      component: KeyPhrases
+      path: '/gallery',
+      name: 'gallery',
+      component: gallery
     },
     {
-      path: '/drugSearch',
-      name: 'drugSearch',
-      component: DrugSearch
-    },
-    {
-      path: '/factSheet',
-      name: 'factSheet',
-      component: FactSheet
-    },
-    {
-      path: '/Game',
-      name: 'Game',
-      component: Game
-    },
-    {
-      path: '/TemplatePage',
-      name: 'TemplatePage',
-      component: TemplatePage
+      path: '/templatePage',
+      name: 'templatePage',
+      component: templatePage
     },
     {
       path: '/upload',
       name: 'upload',
-      component: Upload
+      component: upload
     },
     {
       path: '/share',
       name: 'share',
-      component: Share
+      component: share
     }
 
   ]

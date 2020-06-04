@@ -15,7 +15,7 @@
 import getImageList from "../awsCalls/getImageList.js"
 
 export default {
-    name:"Template",
+    name:"template",
     data(){
         return {
             title: "title",

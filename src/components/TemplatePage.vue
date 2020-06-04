@@ -10,10 +10,10 @@
 <script>
 import Banner from "./Banner.vue";
 import GoogleLogin from 'vue-google-login';
-import Template from "./Template.vue";
+import Template from "./template.vue";
 
 export default {
-    name:"TemplatePage",
+    name:"templatePage",
     data(){
         return {
             title: "",
