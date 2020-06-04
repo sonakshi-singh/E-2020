@@ -7,8 +7,8 @@
           <b-col xs="12" sm="12" md="9" offset-md="2" lg="6" offset-lg="3" xl="6" offset-xl="3">
             <div class="content">
               <h1>WHERE ARE YOU GOING ?</h1>
-              
-            <button id="start-togetherjs" @click="TogetherJS(this); return false;">Start TogetherJS</button>              
+
+            
 
               <b-form-select v-model="travel" :options="options"></b-form-select>
               <!-- <div class="mt-3">
@@ -83,6 +83,11 @@
 import Banner from "./Banner.vue";
 import { MarkerArea } from 'markerjs';
 
+let WebSocketJSONStream = require('@teamwork/websocket-json-stream');
+
+let ShareDB = require('sharedb');
+let share = new ShareDB(options);
+
 export default {
   name: "Home",
   data() {
@@ -95,10 +100,11 @@ export default {
     };
   },
   mounted() {
-    let togetherScript = document.createElement('script')
-    togetherScript.setAttribute('src', 'https://togetherjs.com/togetherjs-min.js')
-    togetherScript.async = true
-    document.head.appendChild(togetherScript)
+    // let togetherScript = document.createElement('script')
+    // togetherScript.setAttribute('src', 'https://togetherjs.com/togetherjs-min.js')
+    // togetherScript.async = true
+    // document.head.appendChild(togetherScript)
+    
 
 
 
@@ -118,6 +124,9 @@ export default {
     destEntered() {
       console.log("is it even reaching");
       this.$root.$emit("destWasEntered", this.travel);
+    },
+      clickFunction() {
+      console.log("is it even reaching");
     }
   },
   components: {
