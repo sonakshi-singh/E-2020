@@ -5,8 +5,9 @@ import Router from 'vue-router'
 import login from './components/Login.vue'
 import upload from './components/upload.vue'
 import share from './components/share.vue'
-import templatePage from './components/TemplatePage.vue'
-import gallery from './components/Gallery.vue'
+import templatePage from './components/templatePage.vue'
+import gallery from './components/gallery.vue'
+import home from './components/home.vue'
 
 
 Vue.use(Router)
@@ -38,6 +39,11 @@ export default new Router({
       path: '/share',
       name: 'share',
       component: share
+    },
+    {
+      path: '/home',
+      name: 'home',
+      component: home
     }
 
   ]

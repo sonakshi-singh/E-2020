@@ -8,8 +8,6 @@
             <div class="content">
               <h1>WHERE ARE YOU GOING ?</h1>
 
-            
-
               <b-form-select v-model="travel" :options="options"></b-form-select>
               <!-- <div class="mt-3">
                 Selected:
@@ -40,7 +38,7 @@
           </b-col>
         </b-row>
       </div>
-      <div class="buttons">
+      <!-- <div class="buttons">
         <b-row no-gutters>
           <b-col xs="6" sm="6" md="6" lg="3" xl="3">
             <router-link :to="'drugSearch'">
@@ -71,10 +69,13 @@
                 @click="destEntered"
                 :disabled="!travel"
               >Medical Phrasebook</b-button>
+              
             </router-link>
           </b-col>
         </b-row>
-      </div>
+      </div> -->
+                                <button id="start-togetherjs">Start TogetherJS</button>
+
     </b-container>
   </div>
 </template>
@@ -82,18 +83,10 @@
 <script>
 import Banner from "./Banner.vue";
 import { MarkerArea } from 'markerjs';
-
-
-let ShareDB = require('sharedb');
-let share = new ShareDB(options);
-
-let WebSocketJSONStream = require('@teamwork/websocket-json-stream');
-
-var stream = new WebSocketJSONStream(ws);
-share.listen(stream);
+import $ from 'jquery';
 
 export default {
-  name: "Home",
+  name: "home",
   data() {
     return {
       travel: null,
@@ -104,13 +97,15 @@ export default {
     };
   },
   mounted() {
-    // let togetherScript = document.createElement('script')
-    // togetherScript.setAttribute('src', 'https://togetherjs.com/togetherjs-min.js')
-    // togetherScript.async = true
-    // document.head.appendChild(togetherScript)
-    
+    let togetherScript = document.createElement('script')
+    togetherScript.setAttribute('src', 'https://togetherjs.com/togetherjs-min.js')
+    togetherScript.async = true
+    document.head.appendChild(togetherScript)
+    console.log('togetherScript', togetherScript);
 
-
+    $(function () {
+      $("#start-togetherjs").click(TogetherJS);
+    });
 
     const mark = new MarkerArea(this.$refs.myImage)
     console.log('mark', mark);
@@ -119,11 +114,8 @@ export default {
       res.src = dataUrl
       console.log('is it reaching here?')
     });
-
-  //   this.$nextTick(function () {
-  //   console.log(this.$refs.myid)
-  // })
   },
+
   methods: {
     destEntered() {
       console.log("is it even reaching");
@@ -131,7 +123,7 @@ export default {
     },
       clickFunction() {
       console.log("is it even reaching");
-    }
+    },
   },
   components: {
     Banner

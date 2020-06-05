@@ -11,6 +11,7 @@
     </b-container>
   </div>
 </template>
+
 <script>
 import getImageList from "../awsCalls/getImageList.js"
 
