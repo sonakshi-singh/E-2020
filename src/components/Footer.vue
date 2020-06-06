@@ -2,65 +2,48 @@
   <b-navbar class="navbar navbar-expand-md navbar-dark bg-dark fixed-bottom">
     <b-navbar-nav class="collapse navbar-collapse" id="navbarCollapse">
       <b-row>
-        <b-col sm="2" md="2" lg="2" xl="2">
-          <b-nav-item>
-            <router-link :to="'drugSearch'">
-              <hospital-icon />
-              <div>OTC</div>
-            </router-link>
-          </b-nav-item>
-        </b-col>
         <b-col sm="3" md="3" lg="3" xl="3">
           <b-nav-item>
             <router-link :to="'factSheet'">
               <book-icon />
-              <div>FACT BOOK</div>
+              <div>Gallery</div>
             </router-link>
           </b-nav-item>
         </b-col>
         <b-col sm="3" md="3" lg="3" xl="3">
           <b-nav-item>
             <map-marker-icon />
-            <div>PHARMACY</div>
+            <div>New</div>
           </b-nav-item>
         </b-col>
         <b-col sm="2" md="2" lg="2" xl="2">
           <b-nav-item>
             <router-link :to="'keyPhrases'">
               <message-text-outline-icon />
-              <div>PHRASES</div>
+              <div>Profile</div>
             </router-link>
-          </b-nav-item>
-        </b-col>
-        <b-col sm="2" md="2" lg="2" xl="2">
-          <b-nav-item>
-            <dots-horizontal-icon />
-            <div>SETTINGS</div>
           </b-nav-item>
         </b-col>
       </b-row>
     </b-navbar-nav>
   </b-navbar>
 </template>
+<!--Gallery , New, Account -->
 
 <script>
-import HospitalIcon from "mdi-vue/Hospital";
 import BookIcon from "mdi-vue/Book";
 import MapMarkerIcon from "mdi-vue/MapMarker";
 import MessageTextOutlineIcon from "mdi-vue/MessageTextOutline";
-import DotsHorizontalIcon from "mdi-vue/DotsHorizontal";
 
 export default {
-  name: "Footer",
+  name: "footer",
   data() {
     return {};
   },
   components: {
-    HospitalIcon,
     BookIcon,
     MapMarkerIcon,
     MessageTextOutlineIcon,
-    DotsHorizontalIcon
   }
 };
 </script>

@@ -4,7 +4,7 @@
       <router-link :to="'/'">
         <img src="../assets/logo-white.png" />
         <span class="typewriter">
-          <span class="typewriter-text">Be Well</span>
+          <!-- <span class="typewriter-text">Be Well</span> -->
         </span>
       </router-link>
     </b-navbar-brand>
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: "Banner",
+  name: "banner",
   data() {
     return {};
   }

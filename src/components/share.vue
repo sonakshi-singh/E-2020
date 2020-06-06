@@ -53,7 +53,7 @@ import {
 // Vue.use(SocialSharing);
 
 export default {
-  name: 'Share',
+  name: 'share',
   data(){
     return{
       file:[],

@@ -5,14 +5,10 @@ async function getImage(filepath){
         Bucket: "beneimages", 
         Key: filepath
     };
-    s3.getObject(params, await function (err, data) {
-        if (err) {
-            return false;
-        }
-        else {
-            return data;
-        }
+    const data = await s3.getObject(params).promise().then(function(result){
+        return result
     })
+    return data
 }
 
 export default getImage
