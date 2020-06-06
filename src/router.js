@@ -8,6 +8,7 @@ import share from './components/share.vue'
 import templatePage from './components/templatePage.vue'
 import gallery from './components/gallery.vue'
 import home from './components/home.vue'
+import edit from './components/edit.vue'
 
 
 Vue.use(Router)
@@ -44,6 +45,11 @@ export default new Router({
       path: '/home',
       name: 'home',
       component: home
+    },
+    {
+      path: '/edit',
+      name: 'edit',
+      component: edit
     }
 
   ]
