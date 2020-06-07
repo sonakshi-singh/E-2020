@@ -54,7 +54,7 @@
 <script>
 // import axios from "axios"
  export default {
-   name:edit,
+   name:"edit",
     data() {
       return {
         form: {
