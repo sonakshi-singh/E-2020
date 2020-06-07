@@ -59,6 +59,7 @@
       return {
         form: {
           title: '',
+          name:'',
           value:''
          
          
