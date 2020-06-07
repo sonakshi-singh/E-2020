@@ -53,7 +53,37 @@
 
 <script>
 // import axios from "axios"
-
+ export default {
+   name:edit,
+    data() {
+      return {
+        form: {
+          title: '',
+          value:''
+         
+         
+        },
+       
+      }
+    },
+    methods: {
+      onSubmit(evt) {
+        evt.preventDefault()
+        alert(JSON.stringify(this.form))
+      },
+      onReset(evt) {
+        evt.preventDefault()
+        // Reset our form values
+       
+        this.form.name = ''
+        
+        this.show = false
+        this.$nextTick(() => {
+          this.show = true
+        })
+      }
+    }
+  }
 
 
 </script>
