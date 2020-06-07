@@ -23,6 +23,7 @@
               <div>Profile</div>
             </router-link>
           </b-nav-item>
+             <GoogleLogin :params="params" :logoutButton="true">Logout</GoogleLogin>
         </b-col>
       </b-row>
     </b-navbar-nav>

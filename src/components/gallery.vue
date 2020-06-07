@@ -1,18 +1,33 @@
 <template>
-  <div class="ratingBox">
-    <p align="left">
-      <img :src="A"/>
-      <img :src="B"/>
-    </p>
+  <div>
+    <b-container fluid class="home-container">
+      
+
+    </b-container>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
-export default {
-    name: 'gallery',
+import Footer from "./footer.vue";
 
-    data(){
-        return {}
-    } 
-}
+export default {
+  name: "gallery",
+  data() {
+  },
+  mounted() {
+  },
+
+  methods: {
+  },
+  components: {
+    Footer
+  }
+};
 </script>
+
+<style lang="scss" scoped>
+
+</style>
+
+
