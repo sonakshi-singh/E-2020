@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-// import Home from './components/Home.vue'
 import login from './components/Login.vue'
 import upload from './components/upload.vue'
 import share from './components/share.vue'
