@@ -74,7 +74,7 @@
           </b-col>
         </b-row>
       </div> -->
-                                <button id="start-togetherjs">Start TogetherJS</button>
+                                <button id="start-togetherjs" @click="clickChat">Start TogetherJS</button>
 
     </b-container>
   </div>
@@ -104,7 +104,7 @@ export default {
     console.log('togetherScript', togetherScript);
 
     $(function () {
-      $("#start-togetherjs").click(TogetherJS);
+      $("#start-togetherjs").click(TogetherJS(this));
     });
 
     const mark = new MarkerArea(this.$refs.myImage)
@@ -121,9 +121,11 @@ export default {
       console.log("is it even reaching");
       this.$root.$emit("destWasEntered", this.travel);
     },
-      clickFunction() {
+
+    clickChat() {
       console.log("is it even reaching");
-    },
+      $("#start-togetherjs").click(TogetherJS(this));
+    }
   },
   components: {
     banner
