@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Banner></Banner>
+    <banner></banner>
     <h1>Template</h1>
             <GoogleLogin :params="params" :renderParams="renderParams" :onSuccess="onSuccess" :onFailure="onFailure"></GoogleLogin>
             <GoogleLogin :params="params" :logoutButton=true>Logout</GoogleLogin>
@@ -8,7 +8,7 @@
   </div>
 </template>
 <script>
-import Banner from "./Banner.vue";
+import banner from "./banner.vue";
 import GoogleLogin from 'vue-google-login';
 import Template from "./template.vue";
 
