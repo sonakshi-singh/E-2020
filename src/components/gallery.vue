@@ -1,5 +1,6 @@
 <template>
   <div>
+    <banner></banner>
     <b-container fluid class="home-container">
       
 
@@ -9,7 +10,7 @@
 </template>
 
 <script>
-import Footer from "./footer.vue";
+ 
 
 export default {
   name: "gallery",

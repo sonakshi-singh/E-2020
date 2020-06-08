@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Banner></Banner>
+    <banner></banner>
     <b-container fluid class="home-container">
       <div class="enter-dest" id="mydiv" ref="myImage">
         <b-row>
@@ -81,7 +81,7 @@
 </template>
 
 <script>
-import Banner from "./Banner.vue";
+import banner from "./banner.vue";
 import { MarkerArea } from 'markerjs';
 import $ from 'jquery';
 

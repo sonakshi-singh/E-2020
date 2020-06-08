@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Banner></Banner>
+    <banner></banner>
     <b-container fluid class="login-container">
       <b-row>
         <b-col xs="12" sm="12" md="6" offset-md="3" lg="6" offset-lg="3" xl="6" offset-xl="3">
@@ -34,7 +34,7 @@
 
 
 <script>
-import Banner from "./Banner.vue";
+import banner from "./banner.vue";
 import GoogleLogin from "vue-google-login";
 
 export default {
