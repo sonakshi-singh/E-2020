@@ -113,6 +113,7 @@ export default {
       const res = this.$ref.resultImage
       res.src = dataUrl
       console.log('is it reaching here?')
+      
     });
   },
 
@@ -124,7 +125,9 @@ export default {
 
     clickChat() {
       console.log("is it even reaching");
+  
       $("#start-togetherjs").click(TogetherJS(this));
+          console.log('shareUrl', TogetherJS.shareUrl())
     }
   },
   components: {
