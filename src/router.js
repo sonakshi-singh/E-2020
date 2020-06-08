@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import login from './components/Login.vue'
+import login from './components/login.vue'
 import upload from './components/upload.vue'
 import share from './components/share.vue'
 import templatePage from './components/templatePage.vue'
