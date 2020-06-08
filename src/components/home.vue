@@ -126,7 +126,7 @@ export default {
     },
   },
   components: {
-    Banner
+    banner
   }
 };
 </script>

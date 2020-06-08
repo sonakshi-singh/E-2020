@@ -5,12 +5,11 @@
       
 
     </b-container>
-    <Footer></Footer>
   </div>
 </template>
 
 <script>
- 
+import banner from "./banner.vue";
 
 export default {
   name: "gallery",
@@ -22,7 +21,7 @@ export default {
   methods: {
   },
   components: {
-    Footer
+    banner
   }
 };
 </script>
