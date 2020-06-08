@@ -5,6 +5,7 @@
     <h1 style="font-size:60px;">Fill out Template</h1>
     <div>
             <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+     <label>Title</label>
       <b-form-group
         id="input-group-1"
         label="Title"
