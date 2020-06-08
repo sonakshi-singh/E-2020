@@ -1,46 +1,70 @@
  <template >
+<div>
+  <Banner></Banner>
   <div id="edit-container">
     <h1 style="font-size:40px;margin-top:5%">Fill out Template</h1>
     
     <div>
             
-    
+    <b-form @submit="onSubmit" v-if="show">
       <b-form-input id="input-1" v-model="title" required placeholder="Enter title"></b-form-input>
       <b-form-datepicker id="example-datepicker" v-model="value" class="mb-2"></b-form-datepicker>
        <b-form-textarea id="textarea" v-model="text" placeholder="What happened?" rows="3" max-rows="6"></b-form-textarea>
        <b-form-textarea id="textarea1" v-model="text1" placeholder="Top 3 things" rows="3" max-rows="6"></b-form-textarea>
 
 
-      <b-button type="submit" variant="primary">Preview</b-button>
-  
+      <b-button type="submit" variant="primary">Submit</b-button>
+     
 
-
-
+    </b-form>
 
     </div>
   </div>
-   
+</div>
     
 </template>
 
 <script>
+
+ 
+
+
+
+import Banner from "./Banner.vue";
 // import axios from "axios"
  export default {
    name:"edit",
-    data() {
+data() {
       return {
-         
-          'title':'',
-          'name':'',
-          'value':'',
-          'text':'',
-          'text1':''
-         
-         
-        }
-       
+        form: {
+          title: '',
+          name: '',
+          value: '',
+          text : '',
+          text1: '',
+        
+      },
+      show: true
       }
+    },
+    methods: {
+      onSubmit(evt) {
+        evt.preventDefault()
+        
+        console.log({title:this.title,value:this.value,text:this.text,text1:this.text1});
+      }
+    
+    },
+    components: {
+      Banner
     }
+
+
+ }
+
+
+
+
   
 
 
