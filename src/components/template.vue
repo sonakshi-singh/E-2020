@@ -22,7 +22,7 @@
 </template>
 
 <script>
-
+import getImageListURL from "../awsCalls/getImageListURL.js"
 export default {
     name:"template",
     data(){
@@ -41,7 +41,7 @@ export default {
     components: {
     },
     created: function() {
-      this.images = ["https://beneimages.s3.us-east-2.amazonaws.com/NickGulson/MikeGrad1.jpeg","https://beneimages.s3.us-east-2.amazonaws.com/NickGulson/MikeGrad2.jpeg"]
+      this.images = getImageListURL("NickGulson", ["MikeGrad1.jpeg","MikeGrad2.jpeg"])
       console.log(this.images)
   }
 };
