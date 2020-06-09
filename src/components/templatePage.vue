@@ -47,7 +47,7 @@ export default {
         }
     },
     components: {
-        Banner,
+        banner,
         GoogleLogin,
         Template
     }
