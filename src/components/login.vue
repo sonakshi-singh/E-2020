@@ -6,13 +6,9 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-              <div class="typewriter">
-                <h1>Welcome to Bene</h1>
-              </div>
-
               <div class="card card-signin my-5">
                 <div class="card-body">
-                  <h5 class="card-title text-center">Sign In</h5>
+                  <h5 class="card-title text-center">Welcome to Bene</h5>
                   <form class="form-signin">
                     <div class="form-label-group">
                       <input
@@ -46,15 +42,17 @@
                       type="submit"
                     >Sign in</button>
                     <hr class="my-4" />
-                    <GoogleLogin class="google-login"
-                      :params="params"
-                      :renderParams="renderParams"
-                      :onSuccess="onSuccess"
-                      :onFailure="onFailure"
-                    ></GoogleLogin>
+                    <div class="google-login">
+                      <GoogleLogin
+                        :params="params"
+                        :renderParams="renderParams"
+                        :onSuccess="onSuccess"
+                        :onFailure="onFailure"
+                      ></GoogleLogin>
+                    </div>
                     <!-- <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit">
                       <i class="fab fa-google mr-2"></i> Sign in with Google
-                    </button> -->
+                    </button>-->
                   </form>
                 </div>
               </div>
@@ -99,10 +97,12 @@ export default {
     onSuccess(googleUser) {
       this.$router.push({ name: "gallery" });
 
-      console.log(googleUser);
+      console.log('whatwhat', googleUser);
+      const googleCreds = googleUser.getBasicProfile();
 
       // This only gets the user information: id, name, imageUrl and email
-      console.log(googleUser.getBasicProfile());
+      console.log('what', googleCreds);
+      this.$root.$emit('emit emit', googleCreds);
     },
     onFailure(error) {
       console.log(error);
@@ -147,8 +147,7 @@ body {
 .typewriter {
   margin: 4em 0 0 0;
   h1 {
-
-     display: inline-block;
+    display: inline-block;
     overflow: hidden;
     letter-spacing: 2px;
     animation: typing 2s steps(60, end), blink 0.75s step-end infinite;
@@ -198,7 +197,7 @@ body {
 
 .card-signin .card-title {
   margin-bottom: 2rem;
-  font-weight: 300;
+  font-weight: 800;
   font-size: 1.5rem;
 }
 
@@ -227,11 +226,6 @@ body {
 .form-label-group input {
   height: auto;
   border-radius: 2rem;
-}
-
-.form-label-group > input,
-.form-label-group > label {
-  padding: var(--input-padding-y) var(--input-padding-x);
 }
 
 .form-label-group > label {
@@ -282,10 +276,9 @@ body {
 }
 
 .google-login {
-  margin: auto;
-  width: 50%;
-  // border: 3px solid green;
-  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>
 

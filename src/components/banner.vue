@@ -21,13 +21,17 @@
       </b-nav-item>
 
       <b-nav-item class="navigation" right>
-        <!-- <router-link :to="'keyPhrases'"> -->
-           <GoogleLogin :params="params" :logoutButton=true>Logout</GoogleLogin>
+        <div class="google-logout">
+          <!-- <router-link :to="'keyPhrases'"> -->
+          <!-- <GoogleLogin :params="params" :logoutButton="true">Logout</GoogleLogin> -->
+        </div>
         <!-- </router-link> -->
       </b-nav-item>
     </b-navbar-nav>
   </b-navbar>
 </template>
+
+//do i need to use $emit to emit the google auth creds to navbar?? check tomorrow morning!!
 
 <script>
 import GoogleLogin from "vue-google-login";
@@ -38,23 +42,20 @@ export default {
     return {};
   },
 
-  mounted() {
-    console.log(this.$route.query.test);
-  },
+  mounted() {},
 
   methods: {
     messageChange(event) {
       console.log(event);
       console.log(this.images);
-    },
-    onSuccess(googleUser) {
-      this.$router.push({ name: "/" });
-
-      console.log(googleUser);
-
-      // This only gets the user information: id, name, imageUrl and email
-      console.log(googleUser.getBasicProfile());
     }
+    // onSuccess(googleUser) {
+    //   this.$router.push({ name: "/" });
+
+    //   console.log(googleUser);
+
+    //   // This only gets the user information: id, name, imageUrl and email
+    //   console.log(googleUser.getBasicProfile());
   },
   components: {
     GoogleLogin
@@ -65,7 +66,7 @@ export default {
 <style lang="scss" scoped>
 .navbar {
   background-color: red;
-  height: 6em !important;
+  height: 4em !important;
 
   .bene-logo {
     padding-bottom: 0.5em;
@@ -147,6 +148,14 @@ export default {
     color: white;
     // border-right: 4px solid orange;
     box-sizing: border-box;
+  }
+
+  #google-signin-btn-0 {
+    input,
+    button,
+    submit {
+      border: none !important;
+    }
   }
 }
 </style>
