@@ -1,78 +1,64 @@
 <template>
   <b-navbar class="navbar">
-      <b-navbar-brand class="bene-logo">
+    <b-navbar-brand class="bene-logo">
       <router-link :to="'/'">
-        <img src="../assets/logo-white.png" />
-        <span class="typewriter">
-          <!-- <span class="typewriter-text">Be Well</span> -->
-        </span>
+        <img src="../assets/Transparent Scan.png" />
       </router-link>
     </b-navbar-brand>
 
-    <b-collapse id="nav-collapse" is-nav>
-      <b-navbar-nav>
-        <b-nav-item href="#">Link</b-nav-item>
-        <b-nav-item href="#" disabled>Disabled</b-nav-item>
-      </b-navbar-nav>
+    <!-- Right aligned nav items -->
+    <b-navbar-nav class="ml-auto">
+      <b-nav-item class="navigation" right>
+        <router-link :to="'gallery'">
+          <div>Gallery</div>
+        </router-link>
+      </b-nav-item>
 
-      <!-- Right aligned nav items -->
-      <b-navbar-nav class="ml-auto">
+      <b-nav-item class="navigation" right>
+        <router-link :to="'keyPhrases'">
+          <div>Profile</div>
+        </router-link>
+      </b-nav-item>
 
-        <b-nav-item>
-            <router-link :to="'gallery'">
-              <book-icon />
-              <div>Gallery</div>
-            </router-link>
-          </b-nav-item> 
-
-         <b-nav-item right>
-            <router-link :to="'keyPhrases'">
-              <message-text-outline-icon />
-              <div>Profile</div>
-            </router-link>
-          </b-nav-item>
-
-          <b-nav-item right>
-            <router-link :to="'keyPhrases'">
-              <message-text-outline-icon />
-              <div>Sign Out</div>
-            </router-link>
-          </b-nav-item>
-
-        <b-nav-item-dropdown right>
-          <!-- Using 'button-content' slot -->
-          <template v-slot:button-content>
-            <em>User</em>
-          </template>
-          <b-dropdown-item href="#">Sign Out</b-dropdown-item>
-        </b-nav-item-dropdown>
-      </b-navbar-nav>
-    </b-collapse>
+      <b-nav-item class="navigation" right>
+        <!-- <router-link :to="'keyPhrases'"> -->
+           <GoogleLogin :params="params" :logoutButton=true>Logout</GoogleLogin>
+        <!-- </router-link> -->
+      </b-nav-item>
+    </b-navbar-nav>
   </b-navbar>
 </template>
 
 <script>
+import GoogleLogin from "vue-google-login";
+
 export default {
   name: "banner",
   data() {
     return {};
   },
-  
+
   mounted() {
-  
-
-    console.log(this.$route.query.test)
-
-
+    console.log(this.$route.query.test);
   },
 
-    methods: {
-      messageChange(event){
-        console.log(event)
-        console.log(this.images)
-      }
+  methods: {
+    messageChange(event) {
+      console.log(event);
+      console.log(this.images);
     },
+    onSuccess(googleUser) {
+      this.$router.push({ name: "/" });
 
+      console.log(googleUser);
+
+      // This only gets the user information: id, name, imageUrl and email
+      console.log(googleUser.getBasicProfile());
+    }
+  },
+  components: {
+    GoogleLogin
+  }
 };
 </script>
 
@@ -92,6 +78,10 @@ export default {
   img {
     height: 60%;
     width: 50%;
+  }
+
+  .navigation div {
+    color: white;
   }
 
   .typewriter {
@@ -146,7 +136,7 @@ export default {
     // width: 50%;
   }
 
-    .typewriter-text {
+  .typewriter-text {
     display: inline-block;
     overflow: hidden;
     letter-spacing: 2px;
