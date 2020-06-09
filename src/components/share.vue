@@ -26,7 +26,7 @@
         <img class="ret" id="uploaded" src="https://benetravel.s3.us-east-2.amazonaws.com/efc44718b9d1b7d960366a3bfa89f5c5.jpg">
       </div>
       <div v-if ='test!=true'>
-        <img class="ret" src= this.file2 >
+        <img :src="this.file2" id="uploaded" class="ret"  >
       </div>
     </div>
 </template>
@@ -34,7 +34,7 @@
 <script>
 // import axios from "axios"
 import uploadImage from "../awsCalls/uploadImage.js"
-import getImage from "../awsCalls/getImage.js"
+import getImageURL from "../awsCalls/getImageURL.js"
 import {
   Facebook,
   Twitter,
@@ -93,7 +93,7 @@ export default {
     // console.log("hehheeh")
     uploadImage(this.file,this.username)
     this.imageName = this.username + "/" + this.file.name
-    this.file2 = getImage(this.imageName)
+    this.file2 = getImageURL(this.username,this.file.name)
   }
     
     },

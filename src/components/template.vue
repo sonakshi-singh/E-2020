@@ -40,6 +40,7 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 export default {
   name: "template",
   data() {
@@ -62,6 +63,29 @@ export default {
       "https://beneimages.s3.us-east-2.amazonaws.com/NickGulson/MikeGrad2.jpeg"
     ];
     console.log(this.images);
+=======
+import getImageListURL from "../awsCalls/getImageListURL.js"
+export default {
+    name:"template",
+    data(){
+        return {
+            title: "title",
+            images: [],
+            messages: []
+        }
+    },
+    methods: {
+      messageChange(event){
+        console.log(event)
+        console.log(this.images)
+      }
+    },
+    components: {
+    },
+    created: function() {
+      this.images = getImageListURL("NickGulson", ["MikeGrad1.jpeg","MikeGrad2.jpeg"])
+      console.log(this.images)
+>>>>>>> 10701ffc7343f9694866e95fbf29fb3301746dfc
   }
 };
 </script>
