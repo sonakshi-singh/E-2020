@@ -2,18 +2,26 @@
   <div>
     <b-container fluid="" class="template-container" >
       <br>
-      <br><br><br><br><br><br>
-
-      <img src= this.images[0] >
-      <input  :value="this.messages[0]" placeholder ="text" @change="messageChange" >
-      <img src= this.images[1] >
-      <input  :value="this.messages[1]" placeholder ="text" >
-    </b-container>
+      <br><br><br><br><br><br><br><br><br><br>
+           <input  :value="this.title" class = "title" placeholder ="text" >
+          <b-row align-h="center">
+            <b-col cols="4">
+            <img :src="this.images[0]" class="ret"  >
+            </b-col><b-col cols="4">
+            <input  :value="this.messages[0]" class = "txt" placeholder ="text" @change="messageChange" >
+            </b-col>
+            </b-row >
+          <b-row align-h="center">
+            <b-col cols="4">
+               <input  :value="this.messages[1]" class = "txt" placeholder ="text" >
+            </b-col><b-col cols="4">
+              <img :src="this.images[1]" class="ret"  >
+          </b-col></b-row>
+          </b-container>
   </div>
 </template>
 
 <script>
-import getImageList from "../awsCalls/getImageList.js"
 
 export default {
     name:"template",
@@ -33,7 +41,7 @@ export default {
     components: {
     },
     created: function() {
-      this.images = getImageList(["NickGulson/MikeGrad1.jpeg","NickGulson/MikeGrad2.jpeg"])
+      this.images = ["https://beneimages.s3.us-east-2.amazonaws.com/NickGulson/MikeGrad1.jpeg","https://beneimages.s3.us-east-2.amazonaws.com/NickGulson/MikeGrad2.jpeg"]
       console.log(this.images)
   }
 };
@@ -41,11 +49,20 @@ export default {
 
 <style lang="scss" scoped>
 .template-container {
-    padding-top: 100%;
+    padding-top : 5%;
     background-image: url("../assets/gradBackground.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     min-height: 90%;
+}
+.txt {
+    width: 200px;
+    height :300px;
+} 
+.ret{
+    width: 300px;
+    height :400px;
+    padding:20px;
 }
 </style>
