@@ -35,7 +35,12 @@ import GoogleLogin from "vue-google-login";
 export default {
   name: "banner",
   data() {
-    return {};
+    return {
+      params: 
+      {
+          client_id: "991176984652-n9j3cc8mk83kgc2tc6hn0i1ubcpt3qod.apps.googleusercontent.com"
+      }
+    };
   },
 
   mounted() {

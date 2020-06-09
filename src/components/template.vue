@@ -1,21 +1,22 @@
 <template>
   <div>
+   <h1 style="font-size:40px;margin-top:5%">View Template</h1>
     <b-container fluid="" class="template-container" >
       <br>
       <br><br><br><br><br><br><br><br><br><br>
-           <input  :value="this.title" class = "title" placeholder ="text" >
+           <input  :value="this.form.title" class = "title" placeholder ="text" >
           <b-row align-h="center">
             <b-col cols="4">
-            <img :src="this.images[0]" class="ret"  >
+            <img :src="this.form.image1" class="ret"  >
             </b-col><b-col cols="4">
-            <input  :value="this.messages[0]" class = "txt" placeholder ="text" @change="messageChange" >
+            <input  :value="this.form.text" class = "txt" placeholder ="text" @change="messageChange" >
             </b-col>
             </b-row >
           <b-row align-h="center">
             <b-col cols="4">
-               <input  :value="this.messages[1]" class = "txt" placeholder ="text" >
+               <input  :value="this.form.text1" class = "txt" placeholder ="text" >
             </b-col><b-col cols="4">
-              <img :src="this.images[1]" class="ret"  >
+              <img :src="this.form.image2" class="ret"  >
           </b-col></b-row>
           </b-container>
   </div>
@@ -24,7 +25,8 @@
 <script>
 import getImageListURL from "../awsCalls/getImageListURL.js"
 export default {
-    name:"template",
+    name:"Template",
+    props: ["form"],
     data(){
         return {
             title: "title",
@@ -37,13 +39,7 @@ export default {
         console.log(event)
         console.log(this.images)
       }
-    },
-    components: {
-    },
-    created: function() {
-      this.images = getImageListURL("NickGulson", ["MikeGrad1.jpeg","MikeGrad2.jpeg"])
-      console.log(this.images)
-  }
+    }
 };
 </script>
 

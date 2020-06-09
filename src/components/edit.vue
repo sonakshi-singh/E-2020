@@ -1,6 +1,4 @@
  <template >
-<div>
-  <Banner></Banner>
   <div id="edit-container">
     <h1 style="font-size:40px;margin-top:5%">Fill out Template</h1>
     
@@ -12,37 +10,21 @@
        <b-form-textarea id="textarea" v-model="form.text" placeholder="What happened?" rows="3" max-rows="6"></b-form-textarea>
        <b-form-textarea id="textarea1" v-model="form.text1" placeholder="Top 3 things" rows="3" max-rows="6"></b-form-textarea>
 
-
-      <b-button type="submit" variant="primary">Submit</b-button>
-     
-
     </b-form>
 
     </div>
-  </div>
 </div>
     
 </template>
 
 <script>
 
- 
-
-
-
-import Banner from "./Banner.vue";
-// import axios from "axios"
  export default {
    name:"edit",
-data() {
+   props: ['form'],
+   data() {
       return {
-        form: {
-          title: '',
-          value: '',
-          text : '',
-          text1: '',
         
-      },
       show: true
       }
     },
@@ -102,9 +84,6 @@ form_m(){
       console.log(jsonObject)
     }
     */
-    },
-    components: {
-      Banner
     }
 
 
