@@ -1,6 +1,6 @@
  <template >
 <div>
-  <Banner></Banner>
+  <banner></banner>
   <div id="edit-container">
     <h1 style="font-size:40px;margin-top:5%">Fill out Template</h1>
     
@@ -26,7 +26,7 @@
 
 <script>
  
-import Banner from "./Banner.vue";
+import Banner from "./banner.vue";
 // import axios from "axios"
  export default {
    name:"edit",
