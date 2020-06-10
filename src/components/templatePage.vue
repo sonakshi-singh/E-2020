@@ -5,7 +5,7 @@
      <div v-if ='edit!=false' >
         <edit v-bind:form="this.form"></edit>
         <button class="btn btn-primary" @click="submit">Submit</button>
-        <button class="btn btn-primary" @click="share"> Share</button>
+        <button class="btn btn-primary" @click="share">     Share</button>
     </div>
     <div v-if ='edit!=true' >
         <templateView v-bind:form="this.form"></templateView>
