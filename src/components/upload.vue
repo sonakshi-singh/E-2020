@@ -41,7 +41,7 @@ import getImageURL from "../awsCalls/getImageURL.js";
 import login from "./login.vue"
 export default {
   name: "upload",
-  props: ["googleCreds"],
+  props: ["cred"],
   data() {
     return {
       file: [],
@@ -58,7 +58,8 @@ export default {
     //   doc.save("Bene_Travel.pdf")
     // },
     onFileChanged(event) {
-      console.log(this.googleCreds);
+      console.log("creds",this.cred);
+      console.log("creds",this.props[0]);
       this.file = event.target.files[0];
       console.log("name",this.file.name)
       console.log("fileboi", this.file);
