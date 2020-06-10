@@ -1,25 +1,39 @@
 <template>
   <div>
     <banner></banner>
-    <h1>Template</h1>
             <GoogleLogin :params="params" :renderParams="renderParams" :onSuccess="onSuccess" :onFailure="onFailure"></GoogleLogin>
             <GoogleLogin :params="params" :logoutButton=true>Logout</GoogleLogin>
-    <templateView></templateView>
+     <div v-if ='edit!=false' >
+        <edit v-bind:form="this.form"></edit>
+        <button @click="submit">Submit</button>
+    </div>
+    <div v-if ='edit!=true' >
+        <templateView v-bind:form="this.form"></templateView>
+         <button @click="back">Go Back!</button>  
+    </div>
   </div>
 </template>
 <script>
 import banner from "./banner.vue";
 import GoogleLogin from 'vue-google-login';
 import templateView from "./templateView.vue";
+import edit from "./edit.vue"
+import getImageListURL from "../awsCalls/getImageListURL.js"
 
 export default {
     name:"templatePage",
     data(){
         return {
-            title: "",
-            images: [],
-            messages: [],
-            params: 
+            edit: true,
+            form: {
+             title: '',
+             value: '',
+             text1 : '',
+             text2: '',
+             image1:'',
+             image2:''
+            },
+            params:
       {
           client_id: "991176984652-n9j3cc8mk83kgc2tc6hn0i1ubcpt3qod.apps.googleusercontent.com"
       },
@@ -30,8 +44,21 @@ export default {
           longtitle: true
       }
         }
-    },
+    }, 
+    created: function() {
+      var images = getImageListURL("NickGulson", ["MikeGrad1.jpeg","MikeGrad2.jpeg"])
+      this.form.image1 = images[0]
+      this.form.image2 = images[1]
+      console.log("now",this.form)
+     },
     methods: {
+        back(){
+            this.edit = true
+        },
+        submit(){
+            this.edit = false
+            //console.log(this.edit)
+        },
         onSuccess(googleUser) {
           console
             console.log(googleUser);
@@ -49,7 +76,8 @@ export default {
     components: {
         banner,
         GoogleLogin,
-        templateView
+        templateView,
+        edit
     }
 };
 </script>

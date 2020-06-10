@@ -1,6 +1,5 @@
  <template >
   <div>
-    <banner></banner>
     <div id="edit-container">
       <h1 style="font-size:40px;margin-top:5%">Fill out Template</h1>
       <div>
@@ -9,38 +8,30 @@
           <b-form-datepicker id="example-datepicker" v-model="form.value" class="mb-2"></b-form-datepicker>
           <b-form-textarea
             id="textarea"
-            v-model="form.text"
+            v-model="form.text1"
             placeholder="What happened?"
             rows="3"
             max-rows="6"
           ></b-form-textarea>
           <b-form-textarea
             id="textarea1"
-            v-model="form.text1"
+            v-model="form.text2"
             placeholder="Top 3 things"
             rows="3"
             max-rows="6"
           ></b-form-textarea>
-          <b-button type="submit" variant="primary">Submit</b-button>
         </b-form>
       </div>
     </div>
   </div>
 </template>
 <script>
-import banner from "./banner.vue";
 
-// import axios from "axios"
 export default {
   name: "edit",
+  props: ["form"],
   data() {
     return {
-      form: {
-        title: "",
-        value: "",
-        text: "",
-        text1: ""
-      },
       show: true
     };
   },
@@ -85,9 +76,6 @@ form_m(){
       console.log(jsonObject)
     }
     */
-  },
-  components: {
-    banner
   }
 };
 </script>

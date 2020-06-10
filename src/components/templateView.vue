@@ -5,13 +5,13 @@
       <br>
       <br><br><br><br><br><br>
        <figure class="fig fig--1" style="--aspect-ratio: 3/4;">
-      <img src= this.images[0] >
+      <img :src="this.form.image1">
       </figure>
-      <input  :value="this.messages[0]" placeholder ="text" @change="messageChange" id="ip1" ><br>
+      <input  :value="this.form.text1" placeholder ="text" @change="messageChange" id="ip1" ><br>
       <figure class="fig fig--2" style="--aspect-ratio: 4/3;">
-      <img src= this.images[1] >
+      <img :src="this.form.image2" >
       </figure>
-      <input  :value="this.messages[1]" placeholder ="text" id="ip2" >
+      <input  :value="this.form.text2" placeholder ="text" id="ip2" >
      </div>
     </b-container>
   
@@ -40,11 +40,10 @@
 //       "https://beneimages.s3.us-east-2.amazonaws.com/NickGulson/MikeGrad2.jpeg"
 //     ];
 //     console.log(this.images);
-import getImageListURL from "../awsCalls/getImageListURL.js"
-import getImageURL from "../awsCalls/getImageURL.js"
 
 export default {
-    name:"templateView",
+	name:"templateView",
+	props: ['form'],
     data(){
         return {
             title: "title",
@@ -55,15 +54,10 @@ export default {
     methods: {
       messageChange(event){
         console.log(event)
-        console.log(this.images)
+		console.log(this.images)
+		console.log(this.form)
       }
-    },
-    components: {
-    },
-    created: function() {
-      this.images = getImageURL(["NickGulson/MikeGrad1.jpeg","NickGulson/MikeGrad2.jpeg"])
-      console.log(this.images)
-  }
+    }
 };
 </script>
 
