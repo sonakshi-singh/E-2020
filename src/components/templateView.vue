@@ -178,14 +178,14 @@ input {
 		grid-row: p3;
 		//transform: rotate(-0.7deg);
 	}
-}
 
-  &:nth-of-type(3) {
+
+    &:nth-of-type(3) {
     grid-column: 2 / span 4;
     grid-row: p3;
     transform: rotate(-0.7deg);
   }
-
+}
 
 /* Aspect ratio – https://css-tricks.com/aspect-ratio-boxes/ */
 [style*="--aspect-ratio"] {
@@ -204,4 +204,5 @@ input {
   left: 0;
   height: 100%;
 }
+
 </style>
