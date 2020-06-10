@@ -21,6 +21,12 @@
       </b-nav-item>
 
       <b-nav-item class="navigation" right>
+        <router-link :to="'keyPhrases'">
+          <div>Log Out</div>
+        </router-link>
+      </b-nav-item>
+
+      <b-nav-item class="navigation" right>
         <div class="google-logout">
           <!-- <router-link :to="'keyPhrases'"> -->
           <!-- <GoogleLogin :params="params" :logoutButton="true">Logout</GoogleLogin> -->

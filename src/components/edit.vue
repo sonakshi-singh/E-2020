@@ -39,12 +39,7 @@
 </template>
 
 <script>
-<<<<<<< HEAD
 import banner from "./banner.vue";
-=======
- 
-import Banner from "./Banner.vue";
->>>>>>> d6dacd2fca8b2a5ee2138c3449824b2949b1db5a
 // import axios from "axios"
 export default {
   name: "edit",
@@ -58,42 +53,9 @@ export default {
         text1: ""
       },
       show: true
-<<<<<<< HEAD
     };
   },
-  methods: {
-    onSubmit(evt) {
-      evt.preventDefault();
 
-      console.log({
-        title: this.title,
-        value: this.value,
-        text: this.text,
-        text1: this.text1
-      });
-    }
-  },
-  components: {
-    banner
-  }
-};
-</script>
-
-<style >
-#input-1 {
-  width: 50%;
-  margin-left: 25%;
-  margin-right: 5%;
-  margin-bottom: 2%;
-}
-.b-form-datepicker {
-  width: 50%;
-  margin-left: 25%;
-  margin-right: 5%;
-  padding-bottom: 5%;
-=======
-      }
-    },
     methods: {
    onSubmit(evt) {
         evt.preventDefault()
@@ -142,7 +104,7 @@ form_m(){
     */
     },
     components: {
-      Banner
+      banner
     }
  }
   
@@ -162,7 +124,6 @@ width: 50%;
 margin-left: 25%;
 margin-right:5%;
 padding-bottom:5%;
->>>>>>> d6dacd2fca8b2a5ee2138c3449824b2949b1db5a
 }
 #textarea {
   width: 50%;
@@ -177,9 +138,5 @@ padding-bottom:5%;
   margin-bottom: 2%;
 }
 </style>
-<<<<<<< HEAD
 
 
-
-=======
->>>>>>> d6dacd2fca8b2a5ee2138c3449824b2949b1db5a

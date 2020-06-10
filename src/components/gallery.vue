@@ -12,12 +12,18 @@
 
       <div class="gallery-view">
         <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-            <h5 class="date">{googleCreds}</h5>
+           <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+            <h5>JUNE 2020</h5>
           </div>
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        </div>
+        <div class="row">
+           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <hr class="divider" />
           </div>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" >
+            <img v-for="image in images" :src="image" :alt="image.alt" class="col-xs-12 col-sm-12 col-md-6 col-lg-6 image_class" />
+          </div>
+         
         </div>
 
         <div class="row">
@@ -35,22 +41,23 @@
 <script>
 import banner from "./banner.vue";
 import upload from "./upload.vue";
-import getImageListURL from "../awsCalls/getImageListURL.js"
+import getImageListURL from "../awsCalls/getImageListURL.js";
 export default {
   name: "gallery",
   data() {
     return {
       images: []
-      
-    }
+    };
   },
   mounted() {},
-   created: function() {
-      this.images = getImageListURL("NickGulson", ["MikeGrad1.jpeg","MikeGrad2.jpeg"])
-      console.log(this.images)
-   },
-  methods: {
+  created: function() {
+    this.images = getImageListURL("NickGulson", [
+      "MikeGrad1.jpeg",
+      "MikeGrad2.jpeg"
+    ]);
+    console.log(this.images);
   },
+  methods: {},
   components: {
     banner,
     upload
@@ -65,4 +72,14 @@ export default {
 .gallery-view {
   margin: 3em 0 0 0;
 }
+
+.image_class{
+  width: 75%;
+  height: 50%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 </style>
+
+
