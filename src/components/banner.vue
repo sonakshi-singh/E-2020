@@ -41,18 +41,14 @@
 
 <script>
 import GoogleLogin from "vue-google-login";
-import { bus } from '../main';
 export default {
   name: "banner",
   data() {
     return {};
   },
   created (){
-    bus.$on('passingCreds', (googleCreds) => {
-      const googleAuth = googleCreds;
-      console.log('googleAuth', googleAuth);
-    })
   },
+  
   methods: {
     persisLoginCreds() {
       this.$root.$on(googleCreds => {

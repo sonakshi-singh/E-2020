@@ -44,10 +44,15 @@ export default {
   name: "gallery",
   data() {
     return {
+      galleryEmail: "",
       images: []
     };
   },
-  mounted() {},
+  mounted() {
+    this.galleryEmail = this.$route.params.googleEmail;
+    console.log('email', this.galleryEmail)
+  },
+
   created: function() {
     this.images = getImageListURL("NickGulson", [
       "MikeGrad1.jpeg",
@@ -88,6 +93,8 @@ export default {
 
 .btn-info {
   margin: 2em 0 0 0;
+  background-color: #b3d9f2;
+  color:black;
 }
 </style>
 

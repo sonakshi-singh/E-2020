@@ -4,11 +4,11 @@
             
      <div v-if ='edit!=false' >
         <edit v-bind:form="this.form"></edit>
-        <button @click="submit">Submit</button>
+        <button class="btn btn-primary" @click="submit">Submit</button>
     </div>
     <div v-if ='edit!=true' >
         <templateView v-bind:form="this.form"></templateView>
-         <button @click="back">Go Back!</button>  
+         <button class="btn btn-primary" @click="back">Go Back!</button>  
     </div>
   </div>
 </template>
@@ -80,3 +80,12 @@ export default {
     }
 };
 </script>
+
+<style lang="scss" scoped>
+.btn-primary {
+  background-color: #b3d9f2;
+  color:black;
+
+}
+
+</style>
