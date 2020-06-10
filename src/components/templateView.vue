@@ -63,8 +63,8 @@ export default {
 }
 figure {
   margin: 0;
-  background: rgba(lightBlue, 0.8);
-  box-shadow: -0.035rem 0.03rem 0.3rem rgba(0, 0, 0, 0.2);
+  //background: rgba(lightBlue, 0.8);
+  //box-shadow: -0.035rem 0.03rem 0.3rem rgba(0, 0, 0, 0.2);
 }
 img {
 	object-fit: cover;
@@ -145,7 +145,7 @@ img {
   }
 
   &--2 {
-    grid-column: 1 / span 7;
+    grid-column: 1 / span 8;
     grid-row: fig2;
   }
 
@@ -160,16 +160,22 @@ img {
 }
 input {
 	&:first-of-type {
-		grid-column: 3 / span 4;
+		grid-column: 2 / span 4;
 		grid-row: p1;
 		z-index: 1;
+		height:300px;
+		
+		
 		//transform: rotate(-1deg);
 	}
 	
 	&:nth-of-type(2) {
-		grid-column: span 3 / -3;
+		grid-column: span 3 / -1;
 		grid-row: p2;
 		z-index: 1;
+		height:300px;
+		
+		
 		//transform: rotate(0.8deg);
 	}
 	
