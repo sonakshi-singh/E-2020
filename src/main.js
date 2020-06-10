@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'vue-material-design-icons/styles.css'
 import router from './router';
+export const bus = new Vue();
 
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)

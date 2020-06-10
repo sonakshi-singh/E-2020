@@ -35,7 +35,7 @@ created() {
         let pusher = new Pusher("1016331", {
         cluster: "us2",
         encrypted: true,
-        authEndpoint: 'http://localhost:8000/pusher/auth',
+        authEndpoint: 'http://benetravel-dev.s3-website-us-east-1.amazonaws.com/pusher/auth',
         });
         this.channel = pusher.subscribe("private-markdown");
         console.log("i was here");
