@@ -40,6 +40,8 @@
 import banner from "./banner.vue";
 import upload from "./upload.vue";
 import getImageListURL from "../awsCalls/getImageListURL.js";
+import getImagesByUser from "../awsCalls/getList.js";
+
 export default {
   name: "gallery",
   data() {
@@ -58,6 +60,10 @@ export default {
       "MikeGrad1.jpeg",
       "MikeGrad2.jpeg"
     ]);
+    this.images12= getImagesByUser("NickGulson");
+    var h=this.images12.request;
+    console.log((h));
+    console.log("image list",(this.images12.response));
     console.log(this.images);
   },
   methods: {

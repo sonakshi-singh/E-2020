@@ -5,10 +5,12 @@
      <div v-if ='edit!=false' >
         <edit v-bind:form="this.form"></edit>
         <button class="btn btn-primary" @click="submit">Submit</button>
+        <button class="btn btn-primary" @click="share"> Share</button>
     </div>
     <div v-if ='edit!=true' >
         <templateView v-bind:form="this.form"></templateView>
-         <button class="btn btn-primary" @click="back">Go Back!</button>  
+         <button class="btn btn-primary" @click="back">Go Back!</button>
+           
     </div>
   </div>
 </template>
@@ -18,6 +20,7 @@ import GoogleLogin from 'vue-google-login';
 import templateView from "./templateView.vue";
 import edit from "./edit.vue"
 import getImageListURL from "../awsCalls/getImageListURL.js"
+import {collabFunctions} from "./collab.js"
 
 export default {
     name:"templatePage",
@@ -54,12 +57,25 @@ export default {
       this.form.image2 = images[1]
       console.log("now",this.form)
      },
+     mounted(){
+   
+    // var doc=document.querySelector("textarea");
+    // g.innerHTML="test123";
+    
+},
     methods: {
         back(){
             this.edit = true
         },
         submit(){
             this.edit = false
+            //console.log(this.edit)
+        },
+        share(){
+             const testCollab = collabFunctions.ChangeID();
+             console.log('this better  work', testCollab);
+             console.log("yeh chala");
+             alert("We generated a private code for you copy the url and share it with your friend")
             //console.log(this.edit)
         },
         onSuccess(googleUser) {

@@ -17,7 +17,7 @@
         <img :src="this.form.image2" />
       </figure>
       <input :value="this.form.text2" placeholder="text" id="ip2" />
-      <upload></upload>
+      <upload ></upload>
     </div>
   </b-container>
 </template>
