@@ -16,7 +16,6 @@
 </div>
     
 </template>
-
 <script>
  export default {
    name:"edit",
@@ -60,13 +59,11 @@
 			output.innerHTML = json;
 		}, false);
   }); 
-  
 }
 form_m(){
    var vm = this,
           formData= new FormData(vm.$refs.form)
       let jsonObject = {};
-      
       for (const [key, value]  of formData.entries()) {
         jsonObject[key] = value;
       }
@@ -78,13 +75,12 @@ form_m(){
   
  
 </script>
-
 <style>
-#input-1{
-width: 50%;
-margin-left: 25%;
-margin-right:5%;
-margin-bottom:2%;
+#input-1 {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 5%;
+  margin-bottom: 2%;
 }
 .b-form-datepicker
 {
