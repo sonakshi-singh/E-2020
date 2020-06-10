@@ -38,15 +38,13 @@
 // import axios from "axios"
 import uploadImage from "../awsCalls/uploadImage.js";
 import getImageURL from "../awsCalls/getImageURL.js";
-import login from "./login.vue"
 export default {
   name: "upload",
-  props: ["googleCreds"],
   data() {
     return {
       file: [],
       test: true,
-      username: "bene_unique",
+      username: "",
       imageName: "",
       file2: false
     };
@@ -58,21 +56,18 @@ export default {
     //   doc.save("Bene_Travel.pdf")
     // },
     onFileChanged(event) {
-      console.log(this.googleCreds);
       this.file = event.target.files[0];
-      console.log("name",this.file.name)
       console.log("fileboi", this.file);
     },
     nameChange(event) {
       this.username = event.target.value;
-      
       // console.log(this.file2)
     },
     onUpload() {
       // upload file
       // this.test=false
-    //   var image = document.getElementById("uploaded");
-    //   image.src = URL.createObjectURL(this.file);
+      var image = document.getElementById("uploaded");
+      image.src = URL.createObjectURL(this.file);
       alert("This was succesful");
       //console.log("upload file")
       //console.log(this.test,"yo")
