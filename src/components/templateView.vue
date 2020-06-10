@@ -53,11 +53,13 @@ export default {
   box-sizing: border-box;
 }
 .template-container {
-  background-image: url("../assets/gradBackground.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  min-height: 10%;
+  
+    background-image: url("../assets/gradBackground.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+	height: 100%;
+  
 }
 figure {
   margin: 0;
@@ -65,10 +67,21 @@ figure {
   box-shadow: -0.035rem 0.03rem 0.3rem rgba(0, 0, 0, 0.2);
 }
 img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  display: block;
+	object-fit: cover;
+	max-width: 80%;
+	height: 100%;
+	display: block;
+	margin-left:10%;
+	margin-right:10%;
+	margin-top: 10%;
+	margin-bottom:10px;
+	padding-bottom: 10%;
+	padding-top:10;
+	
+	
+	
+	/*-ms-transform: rotate(90deg); /* IE 9 */
+  /*transform: rotate(90deg); */
 }
 .grid {
   --verticalPadding: 2rem;
@@ -146,20 +159,28 @@ img {
   }
 }
 input {
-  &:first-of-type {
-    grid-column: 3 / span 4;
-    grid-row: p1;
-    z-index: 1;
-    transform: rotate(-1deg);
-  }
+	&:first-of-type {
+		grid-column: 3 / span 4;
+		grid-row: p1;
+		z-index: 1;
+		//transform: rotate(-1deg);
+	}
+	
+	&:nth-of-type(2) {
+		grid-column: span 3 / -3;
+		grid-row: p2;
+		z-index: 1;
+		//transform: rotate(0.8deg);
+	}
+	
+	&:nth-of-type(3) {
+		grid-column: 2 / span 4;
+		grid-row: p3;
+		//transform: rotate(-0.7deg);
+	}
 
-  &:nth-of-type(2) {
-    grid-column: span 3 / -3;
-    grid-row: p2;
-    transform: rotate(0.8deg);
-  }
 
-  &:nth-of-type(3) {
+    &:nth-of-type(3) {
     grid-column: 2 / span 4;
     grid-row: p3;
     transform: rotate(-0.7deg);
@@ -183,4 +204,5 @@ input {
   left: 0;
   height: 100%;
 }
+
 </style>
