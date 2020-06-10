@@ -23,6 +23,7 @@ export default {
     name:"templatePage",
     data(){
         return {
+            templateEmail:"",
             edit: true,
             form: {
              title: '',
@@ -44,7 +45,10 @@ export default {
       }
         }
     }, 
+
     created: function() {
+      this.templateEmail = this.$route.params.goingToTemplate;
+      console.log('templateEmail', this.templateEmail)
       var images = getImageListURL("NickGulson", ["MikeGrad1.jpeg","MikeGrad2.jpeg"])
       this.form.image1 = images[0]
       this.form.image2 = images[1]

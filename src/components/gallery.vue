@@ -62,7 +62,8 @@ export default {
   },
   methods: {
     routeToEdit() {
-      this.$router.push({ name: "templatePage" });
+      const goingToTemplate = this.galleryEmail;
+      this.$router.push({ name: "templatePage", params:{goingToTemplate}});
 
     }
 
