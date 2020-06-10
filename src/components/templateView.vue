@@ -7,11 +7,11 @@
        <figure class="fig fig--1" style="--aspect-ratio: 3/4;">
       <img :src="this.form.image1">
       </figure>
-      <input  :value="this.form.text1" placeholder ="text" @change="messageChange" id="ip1" ><br>
+      <input :value="this.form.text1" placeholder ="text" @change="messageChange" id="ip1" ><br>
       <figure class="fig fig--2" style="--aspect-ratio: 4/3;">
       <img :src="this.form.image2" >
       </figure>
-      <input  :value="this.form.text2" placeholder ="text" id="ip2" >
+      <input :value="this.form.text2" placeholder ="text" id="ip1" >
      </div>
     </b-container>
   
@@ -71,7 +71,8 @@ export default {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-  min-height: 10%;
+	height: 100%;
+  
 }
 figure {
 	margin: 0;
@@ -80,9 +81,20 @@ figure {
 }
 img {
 	object-fit: cover;
-	width: 100%;
+	max-width: 80%;
 	height: 100%;
 	display: block;
+	margin-left:10%;
+	margin-right:10%;
+	margin-top: 10%;
+	margin-bottom:10px;
+	padding-bottom: 10%;
+	padding-top:10;
+	
+	
+	
+	/*-ms-transform: rotate(90deg); /* IE 9 */
+  /*transform: rotate(90deg); */
 }
 .grid {
 	--verticalPadding: 2rem;
@@ -166,19 +178,20 @@ input {
 		grid-column: 3 / span 4;
 		grid-row: p1;
 		z-index: 1;
-		transform: rotate(-1deg);
+		//transform: rotate(-1deg);
 	}
 	
 	&:nth-of-type(2) {
 		grid-column: span 3 / -3;
 		grid-row: p2;
-		transform: rotate(0.8deg);
+		z-index: 1;
+		//transform: rotate(0.8deg);
 	}
 	
 	&:nth-of-type(3) {
 		grid-column: 2 / span 4;
 		grid-row: p3;
-		transform: rotate(-0.7deg);
+		//transform: rotate(-0.7deg);
 	}
 }
 
