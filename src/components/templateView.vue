@@ -36,7 +36,7 @@
 //     ];
 //     console.log(this.images);
 import getImageListURL from "../awsCalls/getImageListURL.js"
-import getImageList from "../awsCalls/getImageList.js"
+import getImageURL from "../awsCalls/getImageURL.js"
 
 export default {
     name:"templateView",
@@ -56,7 +56,7 @@ export default {
     components: {
     },
     created: function() {
-      this.images = getImageList(["NickGulson/MikeGrad1.jpeg","NickGulson/MikeGrad2.jpeg"])
+      this.images = getImageURL(["NickGulson/MikeGrad1.jpeg","NickGulson/MikeGrad2.jpeg"])
       console.log(this.images)
   }
 };
