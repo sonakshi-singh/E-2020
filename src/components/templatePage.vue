@@ -1,13 +1,16 @@
 <template>
   <div>
     <banner></banner>
-    <Template></Template>
+    <h1>Template</h1>
+            <GoogleLogin :params="params" :renderParams="renderParams" :onSuccess="onSuccess" :onFailure="onFailure"></GoogleLogin>
+            <GoogleLogin :params="params" :logoutButton=true>Logout</GoogleLogin>
+    <templateView></templateView>
   </div>
 </template>
 <script>
 import banner from "./banner.vue";
 import GoogleLogin from 'vue-google-login';
-import Template from "./template.vue";
+import templateView from "./templateView.vue";
 
 export default {
     name:"templatePage",
@@ -46,7 +49,7 @@ export default {
     components: {
         banner,
         GoogleLogin,
-        Template
+        templateView
     }
 };
 </script>

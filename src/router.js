@@ -7,7 +7,7 @@ import share from './components/share.vue'
 import templatePage from './components/templatePage.vue'
 import gallery from './components/gallery.vue'
 import home from './components/home.vue'
-
+import collab from './components/collab.vue'
 
 Vue.use(Router)
 
@@ -43,7 +43,12 @@ export default new Router({
       path: '/home',
       name: 'home',
       component: home
-    }
+    },
+    {
+      path: '/collab',
+      name: 'collab',
+      component: collab
+    },
 
   ]
 })

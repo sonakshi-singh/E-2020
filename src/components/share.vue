@@ -34,7 +34,7 @@
 <script>
 // import axios from "axios"
 import uploadImage from "../awsCalls/uploadImage.js"
-import getImage from "../awsCalls/getImage.js"
+import getImageURL from "../awsCalls/getImageURL.js"
 import {
   Facebook,
   Twitter,
@@ -93,7 +93,7 @@ export default {
     // console.log("hehheeh")
     uploadImage(this.file,this.username)
     this.imageName = this.username + "/" + this.file.name
-    this.file2 = getImage(this.imageName)
+    this.file2 = getImageURL(this.imageName)
   }
     
     },
