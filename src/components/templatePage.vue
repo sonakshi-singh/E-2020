@@ -1,9 +1,6 @@
 <template>
   <div>
     <banner></banner>
-    <h1>Template</h1>
-            <GoogleLogin :params="params" :renderParams="renderParams" :onSuccess="onSuccess" :onFailure="onFailure"></GoogleLogin>
-            <GoogleLogin :params="params" :logoutButton=true>Logout</GoogleLogin>
     <Template></Template>
   </div>
 </template>
