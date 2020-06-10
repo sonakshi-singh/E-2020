@@ -3,10 +3,8 @@
     <banner></banner>
     <b-container fluid class="gallery-container">
       <div class="row">
-        <div
-          class="col-xs-12 col-sm-12 col-md-4 offset-md-8 col-lg-4 offset-lg-8 col-xl-4 offset-xl-8 col align-self-end"
-        >
-          <upload></upload>
+        <div class="col-xs-12 col-sm-12 col-md-4 offset-md-10 col-lg-4 offset-lg-9 col-xl-4 offset-xl-9 col align-self-end">
+            <button type="button" class="btn btn-info" @click="routeToEdit"><font-awesome-icon icon="plus"/> Add New Entry</button>
         </div>
       </div>
 
@@ -46,10 +44,15 @@ export default {
   name: "gallery",
   data() {
     return {
+      galleryEmail: "",
       images: []
     };
   },
-  mounted() {},
+  mounted() {
+    this.galleryEmail = this.$route.params.googleEmail;
+    console.log('email', this.galleryEmail)
+  },
+
   created: function() {
     this.images = getImageListURL("NickGulson", [
       "MikeGrad1.jpeg",
@@ -57,7 +60,15 @@ export default {
     ]);
     console.log(this.images);
   },
-  methods: {},
+  methods: {
+    routeToEdit() {
+      const goingToTemplate = this.galleryEmail;
+      this.$router.push({ name: "templatePage", params:{goingToTemplate}});
+
+    }
+
+
+  },
   components: {
     banner,
     upload
@@ -79,6 +90,12 @@ export default {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.btn-info {
+  margin: 2em 0 0 0;
+  background-color: #b3d9f2;
+  color:black;
 }
 </style>
 

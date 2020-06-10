@@ -67,13 +67,12 @@
 
 <script>
 import GoogleLogin from "vue-google-login";
-import gallery from './gallery.vue';
-import { bus } from '../main'
+import gallery from "./gallery.vue";
+import { bus } from "../main";
 export default {
   name: "login",
   data() {
     return {
-      googleCreds: "",
       params: {
         client_id:
           "991176984652-n9j3cc8mk83kgc2tc6hn0i1ubcpt3qod.apps.googleusercontent.com"
@@ -95,21 +94,20 @@ export default {
   },
   methods: {
     onSuccess(googleUser) {
-      console.log("whatwhat", googleUser);
-      this.googleCreds = googleUser.getBasicProfile();
-      // This only gets the user information: id, name, imageUrl and email
-      if (this.$root.$emit('passingCreds', this.googleCreds)) {
-        console.log(this.googleCreds)
-        this.$router.push({ name: "gallery" });
-      }
+      let googleCreds = googleUser.getBasicProfile();
+      const googleEmail = googleCreds.getEmail();
+  
+
+      this.$router.push({ name: "gallery", params:{googleEmail} });
     },
+
     onFailure(error) {
       console.log(error);
       // This only gets the user information: id, name, imageUrl and email
       // console.log(googleUser.getBasicProfile());
     }
   },
-  
+
   components: {
     GoogleLogin,
     gallery
@@ -205,7 +203,7 @@ body {
   font-weight: bold;
   padding: 1rem;
   transition: all 0.2s;
-  background-color: #b3d9f2
+  background-color: #b3d9f2;
 }
 .form-label-group {
   position: relative;
