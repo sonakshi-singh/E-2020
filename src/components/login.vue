@@ -67,11 +67,14 @@
 
 <script>
 import GoogleLogin from "vue-google-login";
+import gallery from './gallery.vue';
+import { bus } from '../main'
 
 export default {
   name: "login",
   data() {
     return {
+      googleCreds: "",
       params: {
         client_id:
           "991176984652-n9j3cc8mk83kgc2tc6hn0i1ubcpt3qod.apps.googleusercontent.com"
@@ -85,24 +88,23 @@ export default {
     };
   },
   created() {
-    this.question = 0;
-    this.gameComplete = false;
     this.res = 0;
     this.locate = this.questions[0].image;
     for (var i = 0; i < this.num_questions; i++) {
       this.correct[i] = [i, false];
     }
   },
+
   methods: {
     onSuccess(googleUser) {
-      this.$router.push({ name: "gallery" });
-
-      console.log('whatwhat', googleUser);
-      const googleCreds = googleUser.getBasicProfile();
+      console.log("whatwhat", googleUser);
+      this.googleCreds = googleUser.getBasicProfile();
 
       // This only gets the user information: id, name, imageUrl and email
-      console.log('what', googleCreds);
-      this.$root.$emit('emit emit', googleCreds);
+      if (this.$root.$emit('passingCreds', this.googleCreds)) {
+        console.log(this.googleCreds)
+        this.$router.push({ name: "gallery" });
+      }
     },
     onFailure(error) {
       console.log(error);
@@ -111,8 +113,10 @@ export default {
       // console.log(googleUser.getBasicProfile());
     }
   },
+  
   components: {
-    GoogleLogin
+    GoogleLogin,
+    gallery
   }
 };
 </script>
@@ -216,6 +220,7 @@ body {
   font-weight: bold;
   padding: 1rem;
   transition: all 0.2s;
+  background-color: #b3d9f2
 }
 
 .form-label-group {

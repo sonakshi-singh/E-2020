@@ -35,6 +35,7 @@
 
 <script>
 import GoogleLogin from "vue-google-login";
+import { bus } from '../main';
 
 export default {
   name: "banner",
@@ -42,9 +43,21 @@ export default {
     return {};
   },
 
-  mounted() {},
+  created (){
+    bus.$on('passingCreds', (googleCreds) => {
+      const googleAuth = googleCreds;
+      console.log('googleAuth', googleAuth);
+    })
+  },
 
   methods: {
+    persisLoginCreds() {
+      this.$root.$on(googleCreds => {
+        const persistedGoogleCreds = googleCreds;
+        console.log("WAIT WHAT", persistedGoogleCreds);
+      });
+    },
+
     messageChange(event) {
       console.log(event);
       console.log(this.images);
@@ -65,7 +78,7 @@ export default {
 
 <style lang="scss" scoped>
 .navbar {
-  background-color: red;
+  background-color: #b3d9f2;
   height: 4em !important;
 
   .bene-logo {
@@ -82,7 +95,7 @@ export default {
   }
 
   .navigation div {
-    color: white;
+    color: black;
   }
 
   .typewriter {

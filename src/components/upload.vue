@@ -6,7 +6,6 @@
     <h2>Name:  </h2>-->
     <!-- <input  :value="this.username" placeholder ="username" @change="nameChange"> -->
     <div class="testing">
-<<<<<<< HEAD
       <div class="input-group">
         <div class="input-group-prepend">
           <span class="input-group-text" id="inputGroupFileAddon01" @click="onUpload">Upload</span>
@@ -21,17 +20,6 @@
           />
           <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
         </div>
-=======
-      <h2>This was successful</h2>
-      <input type="file" @change="onFileChanged">
-      <button @click="onUpload">Upload!</button>  
-      </div>
-      <div v-if ='test!=false' >
-        <img class="ret" id="uploaded" src="https://benetravel.s3.us-east-2.amazonaws.com/efc44718b9d1b7d960366a3bfa89f5c5.jpg">
-      </div>
-      <div v-if ='test!=true'>
-        <img :src="this.file2" id="uploaded" class="ret"  >
->>>>>>> 10701ffc7343f9694866e95fbf29fb3301746dfc
       </div>
       <!-- <h2>This was successful</h2> -->
       <!-- <input type="file"  />
@@ -48,13 +36,8 @@
 
 <script>
 // import axios from "axios"
-<<<<<<< HEAD
 import uploadImage from "../awsCalls/uploadImage.js";
-import getImage from "../awsCalls/getImage.js";
-=======
-import uploadImage from "../awsCalls/uploadImage.js"
-import getImageURL from "../awsCalls/getImageURL.js"
->>>>>>> 10701ffc7343f9694866e95fbf29fb3301746dfc
+import getImageURL from "../awsCalls/getImageURL.js";
 export default {
   name: "upload",
   data() {
@@ -73,42 +56,15 @@ export default {
     //   doc.text("Fact Sheet Bitches",15,15)
     //   doc.save("Bene_Travel.pdf")
     // },
-<<<<<<< HEAD
     onFileChanged(event) {
       this.file = event.target.files[0];
-      console.log(this.file);
-=======
-    onFileChanged (event) {
-    this.file = event.target.files[0]
-    console.log("fileboi",this.file)
-    
-  },
-  nameChange(event){
-    this.username = event.target.value
-   // console.log(this.file2)
-
-  },
-   onUpload() {
-    // upload file
-    this.test=false
-    var image = document.getElementById('uploaded');
-    
-	image.src = URL.createObjectURL(this.file);   
-    alert("This was succesful")
-    //console.log("upload file")
-    //console.log(this.test,"yo")
-    // console.log("hehheeh")
-    uploadImage(this.file,this.username)
-    this.imageName = this.username + "/" + this.file.name
-    this.file2 = getImageURL(this.username, this.file.name)
-  }
-    
->>>>>>> 10701ffc7343f9694866e95fbf29fb3301746dfc
+      console.log("fileboi", this.file);
     },
     nameChange(event) {
       this.username = event.target.value;
       // console.log(this.file2)
     },
+
     onUpload() {
       // upload file
       // this.test=false
@@ -121,7 +77,7 @@ export default {
       // console.log("hehheeh")
       uploadImage(this.file, this.username);
       this.imageName = this.username + "/" + this.file.name;
-      this.file2 = getImage(this.imageName);
+      this.file2 = getImageURL(this.imageName);
     }
   }
 };

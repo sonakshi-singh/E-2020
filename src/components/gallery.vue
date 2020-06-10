@@ -13,7 +13,7 @@
       <div class="gallery-view">
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-            <h5 class="date">JUNE 2020</h5>
+            <h5 class="date">{googleCreds}</h5>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <hr class="divider" />
@@ -35,29 +35,29 @@
 <script>
 import banner from "./banner.vue";
 import upload from "./upload.vue";
+import getImageListURL from "../awsCalls/getImageListURL.js"
+
 
 export default {
   name: "gallery",
+
   data() {
     return {
-      persistedGoogleCreds:""
+      images: []
+      
     }
   },
-  created() {
-    this.persisLoginCreds();
+  mounted() {},
 
-  },
+   created: function() {
+      this.images = getImageListURL("NickGulson", ["MikeGrad1.jpeg","MikeGrad2.jpeg"])
+      console.log(this.images)
+
+   },
 
   methods: {
-    persisLoginCreds() {
-      this.$root.$on('creds came till here', googleCreds => {
-        this.persistedGoogleCreds = googleCreds;
-        console.log("WAIT WHAT", this.persistedGoogleCreds);
-      })
-    }
-
-
   },
+
   components: {
     banner,
     upload
