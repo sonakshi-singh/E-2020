@@ -8,6 +8,7 @@ import templatePage from './components/templatePage.vue'
 import gallery from './components/gallery.vue'
 import home from './components/home.vue'
 import collab from './components/collab.vue'
+import edit from './components/edit.vue'
 
 Vue.use(Router)
 
@@ -48,6 +49,11 @@ export default new Router({
       path: '/collab',
       name: 'collab',
       component: collab
+    },
+    {
+      path: '/edit',
+      name: 'edit',
+      component: edit
     },
 
   ]
