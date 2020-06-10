@@ -1,8 +1,7 @@
 <template>
   <div>
     <banner></banner>
-            <GoogleLogin :params="params" :renderParams="renderParams" :onSuccess="onSuccess" :onFailure="onFailure"></GoogleLogin>
-            <GoogleLogin :params="params" :logoutButton=true>Logout</GoogleLogin>
+            
      <div v-if ='edit!=false' >
         <edit v-bind:form="this.form"></edit>
         <button @click="submit">Submit</button>
