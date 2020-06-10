@@ -1,14 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import login from './components/login.vue'
+import login from './components/Login.vue'
 import upload from './components/upload.vue'
 import share from './components/share.vue'
 import templatePage from './components/templatePage.vue'
 import gallery from './components/gallery.vue'
 import home from './components/home.vue'
-import edit from './components/edit.vue'
-
+import collab from './components/collab.vue'
 
 Vue.use(Router)
 
@@ -46,10 +45,10 @@ export default new Router({
       component: home
     },
     {
-      path: '/edit',
-      name: 'edit', 
-      component: edit
-    }
+      path: '/collab',
+      name: 'collab',
+      component: collab
+    },
 
   ]
 })

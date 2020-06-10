@@ -36,11 +36,8 @@
 import banner from "./banner.vue";
 import upload from "./upload.vue";
 import getImageListURL from "../awsCalls/getImageListURL.js"
-
-
 export default {
   name: "gallery",
-
   data() {
     return {
       images: []
@@ -48,16 +45,12 @@ export default {
     }
   },
   mounted() {},
-
    created: function() {
       this.images = getImageListURL("NickGulson", ["MikeGrad1.jpeg","MikeGrad2.jpeg"])
       console.log(this.images)
-
    },
-
   methods: {
   },
-
   components: {
     banner,
     upload
@@ -69,10 +62,7 @@ export default {
 .divider {
   box-shadow: inset 0 0 10px #000000;
 }
-
 .gallery-view {
   margin: 3em 0 0 0;
 }
 </style>
-
-

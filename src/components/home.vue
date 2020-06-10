@@ -22,19 +22,18 @@
               ></b-form-input>-->
             </div>
           </b-col>
-        </b-row>
-        <br />
-        <br />
+        </b-row> 
+        <br><br>
         <b-row no-gutters>
           <b-col xs="12" sm="12" md="9" offset-md="2" lg="6" offset-lg="3" xl="6" offset-xl="3">
             <div class="buttons">
-              <router-link :to="'Game'">
-                <b-button
-                  variant="warning"
-                  @click="destEntered"
-                  class="game-buttons"
-                >Play Bene Travel Game</b-button>
-              </router-link>
+                <router-link :to="'Game'">
+                  <b-button
+                    variant="warning"
+                    @click="destEntered"
+                    class="game-buttons"
+                  >Play Bene Travel Game</b-button>
+                </router-link>
             </div>
           </b-col>
         </b-row>
@@ -74,16 +73,17 @@
             </router-link>
           </b-col>
         </b-row>
-      </div>-->
-      <button id="start-togetherjs" @click="clickChat">Start TogetherJS</button>
+      </div> -->
+                                <button id="start-togetherjs">Start TogetherJS</button>
+
     </b-container>
   </div>
 </template>
 
 <script>
 import banner from "./banner.vue";
-import { MarkerArea } from "markerjs";
-import $ from "jquery";
+import { MarkerArea } from 'markerjs';
+import $ from 'jquery';
 
 export default {
   name: "home",
@@ -97,47 +97,22 @@ export default {
     };
   },
   mounted() {
-    let togetherScript = document.createElement("script");
-    togetherScript.setAttribute(
-      "src",
-      "https://togetherjs.com/togetherjs-min.js"
-    );
-    togetherScript.async = true;
-    document.head.appendChild(togetherScript);
-    console.log("togetherScript", togetherScript);
+    let togetherScript = document.createElement('script')
+    togetherScript.setAttribute('src', 'https://togetherjs.com/togetherjs-min.js')
+    togetherScript.async = true
+    document.head.appendChild(togetherScript)
+    console.log('togetherScript', togetherScript);
 
-    $(function() {
-      $("#start-togetherjs").click(TogetherJS(this));
+    $(function () {
+      $("#start-togetherjs").click(TogetherJS);
     });
 
-    $.fn.syncShow = function() {
-      this.show();
-      this.trigger("visibilityChange");
-    };
-
-    $.fn.syncHide = function() {
-      this.hide();
-      this.trigger("visibilityChange");
-    };
-
-    $(document).on("visibilityChange", function() {
-      MyApp.emit("visibilityChange", this, $(this).is(":visible"));
-    });
-
-    MyApp.changeVisibility = function(el, isVisible) {
-      if (isVisible && !el.is(":visible")) {
-        el.syncShow();
-      } else if (!isVisible && el.is(":visible")) {
-        el.syncHide();
-      }
-    };
-
-    const mark = new MarkerArea(this.$refs.myImage);
-    console.log("mark", mark);
-    mark.show(dataUrl => {
-      const res = this.$ref.resultImage;
-      res.src = dataUrl;
-      console.log("is it reaching here?");
+    const mark = new MarkerArea(this.$refs.myImage)
+    console.log('mark', mark);
+    mark.show((dataUrl) => {
+      const res = this.$ref.resultImage
+      res.src = dataUrl
+      console.log('is it reaching here?')
     });
   },
 
@@ -146,13 +121,9 @@ export default {
       console.log("is it even reaching");
       this.$root.$emit("destWasEntered", this.travel);
     },
-
-    clickChat() {
+      clickFunction() {
       console.log("is it even reaching");
-
-      $("#start-togetherjs").click(TogetherJS(this));
-      console.log("shareUrl", TogetherJS.shareUrl());
-    }
+    },
   },
   components: {
     banner
@@ -186,21 +157,21 @@ $button-color: #e7eff9;
   }
 }
 
-.buttons {
-  position: relative;
-  // top: 25%;
-  transform: translateY(-25%);
-  // display: inline;
-}
+ .buttons {
+    position: relative;
+    // top: 25%;
+    transform: translateY(-25%);
+    // display: inline;
+  }
 
 .btn-warning {
-  background: rgba(76, 175, 80, 0.33);
+   background: rgba(76, 175, 80,0.33);
   // opacity:0.3;
   // background-image: linear-gradient(315deg, #e7eff9 0%, #cfd6e6 30%);
   border-color: darken($button-color, 15%);
   color: darken(black, 100%);
-  font-style: bold;
-  font-size: 15px;
+  font-style:bold;  
+  font-size:15px;
   height: 8em;
   word-break: break-word;
   width: 50%;
