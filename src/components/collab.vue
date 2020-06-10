@@ -41,7 +41,7 @@ created() {
         console.log("i was here");
         console.log("i was here",this.channel);
         this.channel.bind("client-new-text", data => {
-        this.markdown = data;
+        this.markdown = data;   
         console.log("this was boundddddd");
         });
     },
