@@ -1,8 +1,6 @@
-# Welcome to Bene
+# Welcome to Bene 1.0
 
-## You can visit us at:
-### http://benetravel-dev.s3-website-us-east-1.amazonaws.com/
-#### (no credentials are necessary to explore functionalities that our app offers)
+Please access Bene 1.0 for the travel health application.
 
 
 ## Point of Contacts in case of technical mishaps:
